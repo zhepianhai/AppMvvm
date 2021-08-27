@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="65dp"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <com.slb.media_lib.weiget.TouchButton
+            android:id="@+id/touch_btn"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            app:tb_anim_padding="5dp"
+            app:tb_color="@color/colorRed"
+            app:tb_color_d="@color/colorRed_d"
+             />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:id="@+id/lay_meida_state"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_del"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:src="@drawable/ic_svg_media_del" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_ok"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_svg_media_ok" />
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_picdir"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:src="@drawable/ic_switch_camera" />
+
+    </FrameLayout>
+</LinearLayout>

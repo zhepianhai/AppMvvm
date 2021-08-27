@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CropImageView">
+        <attr name="cropMaskColor" format="color"/>
+        <attr name="cropBorderColor" format="color"/>
+        <attr name="cropBorderWidth" format="dimension"/>
+        <attr name="cropFocusWidth" format="dimension"/>
+        <attr name="cropFocusHeight" format="dimension"/>
+        <attr name="cropStyle" format="enum">
+            <enum name="rectangle" value="0"/>
+            <enum name="circle" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="Custom_Round_Image_View">
+        <attr name="radius" format="dimension"/>
+        <attr name="left_top_radius" format="dimension"/>
+        <attr name="right_top_radius" format="dimension"/>
+        <attr name="right_bottom_radius" format="dimension"/>
+        <attr name="left_bottom_radius" format="dimension"/>
+    </declare-styleable>
+
+</resources>

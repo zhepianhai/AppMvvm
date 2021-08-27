@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    tools:context=".MediaChoseActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <com.slb.media_lib.weiget.ResizeAbleSurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <com.slb.media_lib.weiget.WaveformView
+            android:id="@+id/waveformView"
+            android:visibility="invisible"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"/>
+
+        <include
+            android:layout_marginBottom="10dp"
+            layout="@layout/layout_media_buttom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"/>
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressBar"
+            android:paddingEnd="10px"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:thumb="@color/colorRed_d"
+            android:progressDrawable="@drawable/seekbar_progress_drawable"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="42dp"
+            android:paddingStart="10px"
+            android:thumbOffset="0dp"
+            android:splitTrack="true"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_tabs"
+            app:tabIndicatorHeight="1dp"
+            app:tabBackground="@android:color/black"
+            app:tabTextColor="#808080"
+            app:tabGravity="center"
+            app:tabMode="scrollable"
+            android:layout_marginBottom="2dp"
+            app:tabIndicatorColor="@android:color/white"
+            app:tabSelectedTextColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_height="48dp">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/img_pic"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/img_recording_60"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/img_recording_15"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:text="@string/img_recording_sound"/>
+        </com.google.android.material.tabs.TabLayout>
+    </FrameLayout>
+
+
+
+
+</LinearLayout>

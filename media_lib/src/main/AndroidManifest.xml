@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.slb.media_lib">
+
+    <application>
+        <activity android:name="com.slb.media_lib.MediaChoseActivity"></activity>
+
+        <activity
+            android:name="com.slb.imaging.IMGGalleryActivity"
+            android:theme="@style/ImageGalleryTheme" />
+
+        <activity
+            android:name="com.slb.imaging.IMGEditActivity"
+            android:theme="@style/ImageEditTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+    </application>
+
+</manifest>

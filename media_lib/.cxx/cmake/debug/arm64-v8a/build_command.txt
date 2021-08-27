@@ -1,0 +1,20 @@
+Executable : D:\work\Android\sdk\cmake\3.10.2.4988404\bin\cmake.exe
+arguments : 
+-HD:\work\SafetySupervision\media_lib\src\main\cpp\lame
+-DCMAKE_BUILD_TYPE=Debug
+-DCMAKE_TOOLCHAIN_FILE=D:\work\AndroidNdk\android-ndk-r21b-windows-x86_64\android-ndk-r21b\build\cmake\android.toolchain.cmake
+-DANDROID_ABI=arm64-v8a
+-DANDROID_NDK=D:\work\AndroidNdk\android-ndk-r21b-windows-x86_64\android-ndk-r21b
+-DANDROID_PLATFORM=android-21
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DCMAKE_ANDROID_NDK=D:\work\AndroidNdk\android-ndk-r21b-windows-x86_64\android-ndk-r21b
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=D:\work\SafetySupervision\media_lib\build\intermediates\cmake\debug\obj\arm64-v8a
+-DCMAKE_MAKE_PROGRAM=D:\work\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_SYSTEM_VERSION=21
+-BD:\work\SafetySupervision\media_lib\.cxx\cmake\debug\arm64-v8a
+-GNinja
+jvmArgs : 
+
+Build command args:

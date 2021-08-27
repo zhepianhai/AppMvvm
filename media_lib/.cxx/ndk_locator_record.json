@@ -1,0 +1,41 @@
+{
+  "ndkFolder": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b",
+  "messages": [
+    {
+      "level": "INFO",
+      "message": "android.ndkVersion from module build.gradle is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "ndk.dir in local.properties is D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b"
+    },
+    {
+      "level": "INFO",
+      "message": "ANDROID_NDK_HOME environment variable is not set"
+    },
+    {
+      "level": "INFO",
+      "message": "sdkFolder is D:\\work\\Android\\sdk"
+    },
+    {
+      "level": "INFO",
+      "message": "NDK side-by-side folder from sdkFolder D:\\work\\Android\\sdk\\ndk does not exist"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b by ndk.dir"
+    },
+    {
+      "level": "INFO",
+      "message": "Considering D:\\work\\Android\\sdk\\ndk-bundle in SDK ndk-bundle folder"
+    },
+    {
+      "level": "INFO",
+      "message": "Rejected D:\\work\\Android\\sdk\\ndk-bundle in SDK ndk-bundle folder because that location has no source.properties"
+    },
+    {
+      "level": "INFO",
+      "message": "Found requested ndk.dir (D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b) which has version 21.1.6352462"
+    }
+  ]
+}

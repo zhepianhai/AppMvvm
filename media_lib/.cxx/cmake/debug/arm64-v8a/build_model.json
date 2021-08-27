@@ -1,0 +1,194 @@
+{
+  "abi": "ARM64_V8A",
+  "abiPlatformVersion": 21,
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "cmake": {
+    "cmakeArtifactsBaseFolder": "D:\\work\\SafetySupervision\\media_lib\\.cxx\\cmake\\debug\\arm64-v8a",
+    "cmakeServerLogFile": "D:\\work\\SafetySupervision\\media_lib\\.cxx\\cmake\\debug\\arm64-v8a\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "D:\\work\\SafetySupervision\\media_lib\\.cxx\\cxx\\debug\\arm64-v8a",
+    "effectiveConfiguration": {
+      "name": "traditional-android-studio-cmake-environment",
+      "description": "Composite reified CMakeSettings configuration",
+      "generator": "Ninja",
+      "inheritEnvironments": [
+        "ndk"
+      ],
+      "buildRoot": "D:\\work\\SafetySupervision\\media_lib\\.cxx\\cmake\\debug\\arm64-v8a",
+      "cmakeToolchain": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\build\\cmake\\android.toolchain.cmake",
+      "cmakeExecutable": "D:\\work\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+      "variables": [
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Debug"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\build\\cmake\\android.toolchain.cmake"
+        },
+        {
+          "name": "ANDROID_ABI",
+          "value": "arm64-v8a"
+        },
+        {
+          "name": "ANDROID_NDK",
+          "value": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b"
+        },
+        {
+          "name": "ANDROID_PLATFORM",
+          "value": "android-21"
+        },
+        {
+          "name": "CMAKE_ANDROID_ARCH_ABI",
+          "value": "arm64-v8a"
+        },
+        {
+          "name": "CMAKE_ANDROID_NDK",
+          "value": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b"
+        },
+        {
+          "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
+          "value": "ON"
+        },
+        {
+          "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
+          "value": "D:\\work\\SafetySupervision\\media_lib\\build\\intermediates\\cmake\\debug\\obj\\arm64-v8a"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "D:\\work\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+        },
+        {
+          "name": "CMAKE_SYSTEM_NAME",
+          "value": "Android"
+        },
+        {
+          "name": "CMAKE_SYSTEM_VERSION",
+          "value": "21"
+        }
+      ]
+    }
+  },
+  "cxxBuildFolder": "D:\\work\\SafetySupervision\\media_lib\\.cxx\\cmake\\debug\\arm64-v8a",
+  "info": {
+    "abi": "ARM64_V8A",
+    "bitness": 64,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "D:\\work\\SafetySupervision\\media_lib\\.cxx\\cmake\\debug\\arm64-v8a",
+  "variant": {
+    "buildSystemArgumentList": [],
+    "buildTargetSet": [],
+    "cFlagsList": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "cppFlagsList": [],
+    "isDebuggableEnabled": true,
+    "module": {
+      "buildSystem": "CMAKE",
+      "cmake": {
+        "cmakeExe": "D:\\work\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
+        "minimumCmakeVersion": "3.10.2",
+        "ninjaExe": "D:\\work\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
+      },
+      "cmakeToolchainFile": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\build\\cmake\\android.toolchain.cmake",
+      "cxxFolder": "D:\\work\\SafetySupervision\\media_lib\\.cxx",
+      "gradleModulePathName": ":media_lib",
+      "intermediatesFolder": "D:\\work\\SafetySupervision\\media_lib\\build\\intermediates",
+      "makeFile": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\CMakeLists.txt",
+      "moduleBuildFile": "D:\\work\\SafetySupervision\\media_lib\\build.gradle",
+      "moduleRootFolder": "D:\\work\\SafetySupervision\\media_lib",
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkFolder": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b",
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 29,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29
+        }
+      },
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkVersion": "21.1.6352462",
+      "project": {
+        "compilerSettingsCacheFolder": "D:\\work\\SafetySupervision\\.cxx",
+        "cxxFolder": "D:\\work\\SafetySupervision\\.cxx",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "rootBuildGradleFolder": "D:\\work\\SafetySupervision",
+        "sdkFolder": "D:\\work\\Android\\sdk"
+      },
+      "splitsAbiFilterSet": [],
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      }
+    },
+    "objFolder": "D:\\work\\SafetySupervision\\media_lib\\build\\intermediates\\cmake\\debug\\obj",
+    "variantName": "debug",
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ]
+  }
+}

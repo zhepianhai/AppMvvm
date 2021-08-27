@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="qmui_skin_support_topbar_bg">@color/qmui_config_color_blue</item>
+        <item name="qmui_skin_support_topbar_title_color">@color/qmui_config_color_blue</item>
+        <item name="qmui_skin_support_topbar_subtitle_color">@color/qmui_config_color_blue</item>
+        <item name="qmui_skin_support_topbar_text_btn_color_state_list">@color/qmui_config_color_blue</item>
+        <item name="qmui_skin_support_topbar_image_tint_color">@color/qmui_config_color_blue</item>
+    </style>
+
+
+    <style name="MOW.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+        <!--&lt;!&ndash;Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色&ndash;&gt;-->
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
+    </style>
+
+    <style name="AppTheme.OverlapSystemBar" parent="Base.AppTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <!--toolbar的样式-->
+    <style name="my_toolbar_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@drawable/toolbar_bg</item>
+        <item name="android:titleTextAppearance">@style/ToolbarTitleTheme</item>
+    </style>
+
+    <style name="my_toolbar_home_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:titleTextAppearance">@style/ToolbarTitleHomeTheme</item>
+    </style>
+
+    <style name="my_toolbar_home_style_wrap" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/main_tab_text_selected</item>
+        <item name="android:titleTextAppearance">@style/ToolbarTitleHomeTheme</item>
+    </style>
+
+    <style name="my_toolbar_home_style.ActionBar" parent="my_toolbar_home_style">
+        <item name="actionMenuTextColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- toolbar标题样式，需要在Toolbar布局中用：app:titleTextAppearance="@style/ToolbarTitleTheme" 来使用 -->
+    <style name="ToolbarTitleTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/app_text_large</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ToolbarTitleHomeTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/app_text_large</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="statistics_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/ainemo_white</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+</resources>

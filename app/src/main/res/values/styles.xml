@@ -1,0 +1,204 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="qmui_skin_support_topbar_bg">@color/qmui_config_color_blue</item>
+        <item name="qmui_skin_support_topbar_title_color">@color/qmui_config_color_white</item>
+        <item name="qmui_skin_support_topbar_subtitle_color">@color/qmui_config_color_75_white</item>
+        <item name="qmui_skin_support_topbar_text_btn_color_state_list">@color/qmui_config_color_white</item>
+        <item name="qmui_skin_support_topbar_image_tint_color">@color/qmui_config_color_white</item>
+    </style>
+
+    <style name="AppTheme.OverlapSystemBar" parent="Base.AppTheme" />
+
+
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="progressBarColor">@color/colorPrimary</item>-->
+        <!--<item name="loadMore">正在努力加载中...</item>-->
+    </style>
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MOW.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="SplashTheme" parent="MOW.AppTheme">
+        <!--<item name="android:windowBackground">@drawable/splash_layerlist</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+
+        <!--<item name="android:windowFullscreen">true</item>-->
+    </style>
+
+    <!--toolbar的样式-->
+    <style name="my_toolbar_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@drawable/toolbar_bg</item>
+    </style>
+
+    <style name="my_toolbar_home_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="my_toolbar_home_style_wrap" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/main_tab_text_selected</item>
+    </style>
+
+    <style name="my_toolbar_home_style.ActionBar" parent="my_toolbar_home_style">
+        <item name="actionMenuTextColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- toolbar标题样式，需要在Toolbar布局中用：app:titleTextAppearance="@style/ToolbarTitleTheme" 来使用 -->
+    <style name="ToolbarTitleTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/app_text_large</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ToolbarTitleHomeTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/app_text_large</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditText_Style">
+        <item name="android:textColorHint">@color/app_text_color_light</item>
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textSize">@dimen/app_text_normal</item>
+    </style>
+
+
+
+
+
+
+    <style name="Title_Style">
+        <item name="android:textColor">@color/text_color_normal</item>
+        <item name="android:textSize">@dimen/app_text_xxxlarge</item>
+    </style>
+
+
+
+
+    <style name="spinner_item" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/main_tab_text_normal</item>
+        <item name="android:textSize">@dimen/app_text_small</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:layout_height">@dimen/i_spinner_height</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+
+
+
+
+    <style name="Line_Deep_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/onkey_list_divider</item>
+    </style>
+
+    <style name="Line_Light_Style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/line_divider_colcr</item>
+    </style>
+
+    <style name="TextView_Title_Style">
+        <item name="android:textColor">@color/image_zoom_dark_bg</item>
+        <item name="android:textSize">@dimen/app_text_snormal</item>
+    </style>
+
+    <style name="TextView_Content_Style">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/app_text_snormal</item>
+    </style>
+
+
+    <style name="textview_label">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textColor">@color/trend_name_color</item>
+        <item name="android:padding">3.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+
+    <style name="Popupwindow">
+        <item name="android:windowEnterAnimation">@anim/window_out</item>
+        <item name="android:windowExitAnimation">@anim/window_back</item>
+    </style>
+
+    <style name="supervision_text_title">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textSize">@dimen/app_text_small</item>
+    </style>
+
+    <style name="supervision_text_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textSize">@dimen/app_text_lsmall</item>
+    </style>
+
+    <style name="supervision_rb_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/app_text_lsmall</item>
+    </style>
+
+    <style name="supervision_edit_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:background">@drawable/edit_bg</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textSize">@dimen/app_text_lsmall</item>
+    </style>
+
+    <style name="supervision_edit">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:background">@drawable/edit_bg</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+        <item name="android:textColor">@color/app_text_color</item>
+        <item name="android:textSize">@dimen/app_text_lsmall</item>
+    </style>
+    <!--dialog去阴影-->
+    <style name="update_dialogStyle">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <style name="MOWButtonDarkStyle">
+        <item name="android:layout_height">@dimen/view_size_lsmall</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/login_dark</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

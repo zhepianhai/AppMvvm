@@ -1,0 +1,18 @@
+<resources>
+    <string name="img_pic">拍照</string>
+    <string name="img_recording_60">拍60秒</string>
+    <string name="img_recording_15">拍15秒</string>
+    <string name="img_recording_sound">录音</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hind_ok">确定</string>
+    <string name="hind_dis">取消</string>
+    <string name="hind_error_record">录制失败!</string>
+    <string name="hind_success_record">文件存储成功!</string>
+    <string name="del_current_pic">删除本张图片?</string>
+    <string name="del_current_aduio">删除本段音频?</string>
+    <string name="del_current_video">删除本段视频?</string>
+
+    <string name="file_error">本地文件读写异常，请退出重试！</string>
+</resources>

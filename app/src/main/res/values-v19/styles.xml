@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>Theme.AppCompat.Light.NoActionBar
+    <style name="MOW.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="android:fitsSystemWindows">true</item>-->7
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
+
+    </style>
+
+    <!--toolbar的样式-->
+    <style name="my_toolbar_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@drawable/toolbar_bg</item>
+    </style>
+
+    <style name="my_toolbar_home_style" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+    <style name="my_toolbar_home_style_wrap" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/main_tab_text_selected</item>
+    </style>
+
+    <style name="my_toolbar_home_style.ActionBar" parent="my_toolbar_home_style">
+        <item name="actionMenuTextColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- toolbar标题样式，需要在Toolbar布局中用：app:titleTextAppearance="@style/ToolbarTitleTheme" 来使用 -->
+    <style name="ToolbarTitleTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/app_text_large</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ToolbarTitleHomeTheme" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/app_text_large</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="statistics_label">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/ainemo_white</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+</resources>

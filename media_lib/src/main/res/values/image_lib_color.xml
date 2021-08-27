@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlue">#3F51B5</color>
+    <color name="colorRed">#FE2B54</color>
+    <color name="colorRed_d">#f26480</color>
+
+    <color name="colorWrite">#FFFFFF</color>
+    <color name="colorWrite_d">#D0D0D0</color>
+
+    <color name="colorYel">#f5c830</color>
+    <color name="colorYel_d">#f6e093</color>
+</resources>

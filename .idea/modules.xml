@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AppMvvm.iml" filepath="$PROJECT_DIR$/AppMvvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AppMvvm.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AppMvvm.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/AppMvvm.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/AppMvvm.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dropdownmenu/AppMvvm.dropdownmenu.iml" filepath="$PROJECT_DIR$/.idea/modules/dropdownmenu/AppMvvm.dropdownmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imagepicker/AppMvvm.imagepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/imagepicker/AppMvvm.imagepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/media_lib/AppMvvm.media_lib.iml" filepath="$PROJECT_DIR$/.idea/modules/media_lib/AppMvvm.media_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/signature/AppMvvm.signature.iml" filepath="$PROJECT_DIR$/.idea/modules/signature/AppMvvm.signature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/zpopupwindowlib/AppMvvm.zpopupwindowlib.iml" filepath="$PROJECT_DIR$/.idea/modules/zpopupwindowlib/AppMvvm.zpopupwindowlib.iml" />
+    </modules>
+  </component>
+</project>

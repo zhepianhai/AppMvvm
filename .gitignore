@@ -1,0 +1,8 @@
+# Project exclude paths
+/.gradle/
+/imagepicker/build/
+/imagepicker/build/intermediates/javac/debug/classes/
+/signature/build/
+/signature/build/intermediates/javac/debug/classes/
+/zpopupwindowlib/build/
+/zpopupwindowlib/build/intermediates/javac/debug/classes/

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <paths>
+        <root-path
+            name="camera_photos"
+            path="." />
+        <!--files-path  相当于 getFilesDir（）-->
+        <files-path name="images" path="images"/>
+        <!--cache-path  相当于 getCacheDir（）-->
+        <cache-path name="files" path="files"/>
+        <cache-path name="media" path="media"/>
+        <cache-path name="luban" path="luban"/>
+        <!--external-path  相当于 Environment.getExternalStorageDirectory()-->
+        <external-path name="pictures" path="Pictures"/>
+        <external-path name="external_files" path="."/>
+        <!--external-files-path  相当于 getExternalFilesDir("") -->
+        <external-files-path name="external_files" path="."/>
+        <external-files-path name="external_picture" path="Pictures"/>
+        <external-files-path name="images" path="Pictures" />
+        <!--external-cache-path  相当于 getExternalCacheDir（） -->
+        <external-cache-path  name="files" path="files"/>
+        <external-cache-path  name="media" path="media"/>
+        <external-cache-path  name="luban" path="luban"/>
+        <!-- /storage/emulated/0/Download/${applicationId}/.beta/apk-->
+        <external-path name="beta_external_path" path="Download/"/>
+        <!--/storage/emulated/0/Android/data/${applicationId}/files/apk/-->
+        <external-path name="beta_external_files_path" path="Android/data/"/>
+
+        <external-cache-path name="ex_path_cache" path="cameras/"/>
+    </paths>
+</resources>

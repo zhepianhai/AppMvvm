@@ -1,0 +1,127 @@
+[
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\native-lib.cpp.o -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\native-lib.cpp",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\native-lib.cpp"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\bitstream.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\bitstream.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\bitstream.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\encoder.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\encoder.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\encoder.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\gain_analysis.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\gain_analysis.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\gain_analysis.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\lame.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\lame.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\lame.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\id3tag.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\id3tag.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\id3tag.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\mpglib_interface.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\mpglib_interface.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\mpglib_interface.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\newmdct.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\newmdct.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\newmdct.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\presets.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\presets.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\presets.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\psymodel.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\psymodel.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\psymodel.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\quantize.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\quantize.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\quantize.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\fft.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\fft.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\fft.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\quantize_pvt.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\quantize_pvt.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\quantize_pvt.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\reservoir.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\reservoir.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\reservoir.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\set_get.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\set_get.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\set_get.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\tables.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\tables.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\tables.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\takehiro.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\takehiro.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\takehiro.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\util.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\util.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\util.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\vbrquantize.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\vbrquantize.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\vbrquantize.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\VbrTag.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\VbrTag.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\VbrTag.c"
+},
+
+{
+  "directory": "D:/work/SafetySupervision/media_lib/.cxx/cmake/debug/x86_64",
+  "command": "D:\\work\\AndroidNdk\\android-ndk-r21b-windows-x86_64\\android-ndk-r21b\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --target=x86_64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC   -o CMakeFiles\\native-lib.dir\\version.c.o   -c D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\version.c",
+  "file": "D:\\work\\SafetySupervision\\media_lib\\src\\main\\cpp\\lame\\version.c"
+}
+]

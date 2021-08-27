@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- 自定义BottomPushPopupWindow动画，从底部弹出 -->
+    <style name="BottomPushPopupWindow" parent="android:Animation">
+        <!-- 进入时的动画 -->
+        <item name="android:windowEnterAnimation">@anim/pw_push_bottom_in</item>
+        <!-- 退出时的动画 -->
+        <item name="android:windowExitAnimation">@anim/pw_push_bottom_out</item>
+    </style>
+
+    <!-- 自定义TopPushPopupWindow动画，从顶部弹出 -->
+    <style name="TopPushPopupWindow" parent="android:Animation">
+        <!-- 进入时的动画 -->
+        <item name="android:windowEnterAnimation">@anim/pw_push_top_in</item>
+        <!-- 退出时的动画 -->
+        <item name="android:windowExitAnimation">@anim/pw_push_top_out</item>
+    </style>
+    <style name="dialog_style" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+    </style>
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
+    </style>
+</resources>

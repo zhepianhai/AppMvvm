@@ -1,0 +1,27 @@
+ninja: Entering directory `D:\work\SafetySupervision\media_lib\.cxx\cmake\debug\arm64-v8a'
+[1/1] Linking CXX shared library D:\work\SafetySupervision\media_lib\build\intermediates\cmake\debug\obj\arm64-v8a\libnative-lib.so
+FAILED: D:/work/SafetySupervision/media_lib/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so 
+cmd.exe /C "cd . && D:\work\AndroidNdk\android-ndk-r21b-windows-x86_64\android-ndk-r21b\toolchains\llvm\prebuilt\windows-x86_64\bin\clang++.exe --target=aarch64-none-linux-android21 --gcc-toolchain=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=D:/work/AndroidNdk/android-ndk-r21b-windows-x86_64/android-ndk-r21b/toolchains/llvm/prebuilt/windows-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O0 -fno-limit-debug-info  -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libnative-lib.so -o D:\work\SafetySupervision\media_lib\build\intermediates\cmake\debug\obj\arm64-v8a\libnative-lib.so CMakeFiles/native-lib.dir/native-lib.cpp.o CMakeFiles/native-lib.dir/bitstream.c.o CMakeFiles/native-lib.dir/encoder.c.o CMakeFiles/native-lib.dir/gain_analysis.c.o CMakeFiles/native-lib.dir/lame.c.o CMakeFiles/native-lib.dir/id3tag.c.o CMakeFiles/native-lib.dir/mpglib_interface.c.o CMakeFiles/native-lib.dir/newmdct.c.o CMakeFiles/native-lib.dir/presets.c.o CMakeFiles/native-lib.dir/psymodel.c.o CMakeFiles/native-lib.dir/quantize.c.o CMakeFiles/native-lib.dir/fft.c.o CMakeFiles/native-lib.dir/quantize_pvt.c.o CMakeFiles/native-lib.dir/reservoir.c.o CMakeFiles/native-lib.dir/set_get.c.o CMakeFiles/native-lib.dir/tables.c.o CMakeFiles/native-lib.dir/takehiro.c.o CMakeFiles/native-lib.dir/util.c.o CMakeFiles/native-lib.dir/vbrquantize.c.o CMakeFiles/native-lib.dir/VbrTag.c.o CMakeFiles/native-lib.dir/version.c.o  -latomic -lm && cd ."
+CMakeFiles/native-lib.dir/bitstream.c.o: In function `do_copy_buffer':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/bitstream.c:(.text.do_copy_buffer+0x88): undefined reference to `bcopy'
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/bitstream.c:(.text.do_copy_buffer+0x8c): undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/bitstream.c.o: In function `putheader_bits':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/bitstream.c:(.text.putheader_bits+0xc): undefined reference to `bcopy'
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/bitstream.c:(.text.putheader_bits+0x10): undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/encoder.c.o: In function `lame_encode_mp3_frame':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/encoder.c:472: undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/encoder.c.o:D:/work/SafetySupervision/media_lib/src/main/cpp/lame/encoder.c:477: more undefined references to `bcopy' follow
+CMakeFiles/native-lib.dir/id3tag.c.o: In function `id3tag_set_track':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/id3tag.c:1125: undefined reference to `index'
+CMakeFiles/native-lib.dir/id3tag.c.o: In function `local_ucs2_strdup':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/id3tag.c:(.text.local_ucs2_strdup+0xe8): undefined reference to `bcopy'
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/id3tag.c:(.text.local_ucs2_strdup+0xec): undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/newmdct.c.o: In function `mdct_sub48':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/newmdct.c:1036: undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/psymodel.c.o: In function `L3psycho_anal_vbr':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/psymodel.c:1443: undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/psymodel.c.o: In function `psymodel_init':
+D:/work/SafetySupervision/media_lib/src/main/cpp/lame/psymodel.c:2156: undefined reference to `bcopy'
+CMakeFiles/native-lib.dir/quantize.c.o:D:/work/SafetySupervision/media_lib/src/main/cpp/lame/quantize.c:1287: more undefined references to `bcopy' follow
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.

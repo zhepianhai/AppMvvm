@@ -1,0 +1,10 @@
+rootProject.name='AppMvvm'
+include ':app'
+include ':dropdownmenu'
+include ':signature'
+include ':imagepicker'
+include ':core'
+include ':media_lib'
+include ':zpopupwindowlib'
+include ':zpopupwindowlib'
+

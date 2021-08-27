@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--基础引用-->
+<resources>
+    <style name="matchmatch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="matchwrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wrapmatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="wrapwrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="matchauto">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="wrapauto">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="automatch">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="autowrap">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+
+
+    <style name="matchmatch.vertical" parent="matchmatch">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="matchmatch.horizontal" parent="matchmatch">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="matchwrap.vertical" parent="matchwrap">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="matchwrap.horizontal" parent="matchwrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="wrapmatch.vertical" parent="wrapmatch">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wrapmatch.horizontal" parent="wrapmatch">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="wrapwrap.vertical" parent="wrapwrap">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wrapwrap.horizontal" parent="wrapwrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+    <style name="matchauto.vertical" parent="matchauto">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="matchauto.horizontal" parent="matchauto">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="wrapauto.vertical" parent="wrapauto">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wrapauto.horizontal" parent="wrapauto">
+        <item name="android:orientation">horizontal</item>
+
+    </style>
+
+    <style name="automatch.vertical" parent="automatch">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="automatch.horizontal" parent="automatch">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="autowrap.vertical" parent="autowrap">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="autowrap.horizontal" parent="autowrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+
+</resources>

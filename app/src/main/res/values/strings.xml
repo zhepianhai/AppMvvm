@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">超级定位</string>
+    <string name="i_main_name_all">超级定位APP</string>
+
+    <string name="app_name_safe_title">安全提示</string>
+    <string name="app_name_safe_content">你当前设备存在安全隐患，禁止使用！</string>
+    <string name="app_name_safe_content_root">你当前设备为Root状态，禁止使用！</string>
+
+    <!--退出登录-->
+    <string name="is_confirm_log_out">是否确认退出？</string>
+    <string name="dialog_confirm">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="open_source_license_title">开源许可</string>
+    <string name="app_update_check">版本升级</string>
+    <string name="app_update_check_new">检测到新版本</string>
+    <string name="app_update_check_no_need">当前已是最新版本</string>
+    <string name="app_update_doing">正在下载更新</string>
+    <string name="app_update_start">开始下载</string>
+    <string name="app_update_fail">下载新版本失败</string>
+
+    <!--更新对话框-->
+    <string name="update_source">更新内容：</string>
+    <string name="once_update">立即升级</string>
+    <string name="permission_info">本应用重视与保障您的个人隐私，我们依据最新的监管要求更新了《用户协议》和《隐私政策》。</string>
+    <string name="permission_info_1">本应用所需的应用权限如下：</string>
+    <string name="permission_info_2">1.定位：获取gps、网络位置信息的权限。</string>
+    <string name="permission_info_3">2.存储：存储或修改图片文件权限。</string>
+    <string name="permission_info_4">3.手机信息：可以获取手机的uuid或者imei唯一标识等信息权限。</string>
+    <string name="permission_info_5">为了更好的体验功能，您可以自行选择开启所需的权限，您可以在《权限说明》中了解到权限的详细应用说明</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

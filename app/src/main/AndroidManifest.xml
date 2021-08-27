@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gw.zph"> <!-- 扫码库最小sdk小于24使用 -->
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序打开网络套接字 -->
+    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.PERMISSION_GRANTED" /> <!--  -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" /> <!-- 闪光灯权限 -->
+    <uses-feature android:name="android.hardware.camera" /> <!-- 相机 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 相机自动对焦 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> <!-- 允许修改 WIFI 状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问GPS定位/网络定位 -->
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <!-- 用于申请调用A-GPS模块 -->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 用于申请获取蓝牙信息进行室内定位 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> <!-- 用于申请相机权限 -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- 增加申请权限 -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" /> <!-- 讯飞语音识别 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 保持唤醒 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SETTINGS" /> <!-- 保持唤醒 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.INJECT_EVENTS"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name=".application.SophixStubApplication"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="UnusedAttribute"
+        tools:replace="android:allowBackup">
+        <activity android:name=".ui.home.main.PayActivity"></activity>
+        <activity android:name=".ui.home.main.AddPosActivity" />
+        <activity android:name=".ui.home.MainActivity" />
+        <activity android:name=".ui.PermissionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- meta-data -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="9a01c9e794fc10f7418d9f807dd7509d" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="333516939" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="8ec75d0bad9348bb8fd0c0c36039c8cd" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCrEYG4LNeR2UPDNgjeG6EtvHt2LtydnwiL5l+AJjBetplQbkm9tdph2v/ycz64QuT0YYp7Dh9ExaJLLgqa4bwtiMryqDuN6qK3DmhEXuBIpSNimN1KEFKlyarB5hUbeXEB42MDaRZUkG4I6MK/gjS0qIMMxXTzid18QFt8H4JoGc6VvrLbh2XgLZvI0/BSqGBQgpSlEICp1TJqRFdLCdGq+3pryzqUcl54L2EnjsArkjIbIjZct8/nGG4GTOn214UAORQ1HFe40KJ24pLAF5Lbxxb77qlWTFiQAflWU1K51J6/4ELLrUemiBUxBH+XsamK+JMuYu+yzeO+DEtE3cvTAgMBAAECggEAU1Rvz/tn9s/SxmCn6SmkVdcefO9O4Cj7zMoncxEnNrvT6u4OVa8j9c7sJnok7zUGulRZVKAIc0OiTuTanZ+gPr4HvjRc7kCBipImEEf3EOwAVKMKCG3zFHcsCs+9MGjzt2vAa4ThL8g7EXPwicEvU2FSlQIKeieKEGB5L/lZWMONiyVfzIDuGA8dpHzdp4I+wfOqBAHTQiJtp5/G7mkRT6BzRsNm6ZOkGMIYMs32Wu5t7tlJc7XBwzjXVrHv3uGxBSm1ggwqy57kMogyPzeI23irAlxdIzCIUIDVij4QUzZhzjFeRmhNXhO0jAsZQWBkmFFcyLg2+Vu247l+cZDzgQKBgQDUff7r4irRVBsOtmbMCZSsTJxfXenbqPmr7kxtoG17qfQcROz6D9cBQLHzlOPLHManKpeLG65e1vxI+J3W1rNjbvL1kamEdKcUcRHyR7IAFqscduDNI+P8XGLVXpkafJedU9m5ADVNZqnVaI41SmKYRfmc4t7LF52AFECbrC/QMQKBgQDOGD0r5xq9NjoWXHhZ6fCX+qRS60EEXbyS0S7vW8R3Kkv0mG2u6pazHRLc/5TIh2UuQuMyYgyznPe3vdYG1XSMAWPt2kDYA+Zz7vEEfRDLne6aXPbE8fw8PtbO8O4x0FFl2Q8hhFXJQAUavLFlb0OqI46O7cgVMnBQrbzp2rJ/QwKBgCaVakBypMu1teQKAshxxOk0UACREPGt0QgDESWmx7p4tbacXVtanPPBR46vLl2nL/sSpMnBkPvvlYe6fQ6RlakscDle5aUDeYMgtN2FXzDc7N0SSOd26OLd86RCtRI2JWGP5CzPeN5BEf2KKqhKhXSY4CY4m7PM6fBjvQeHUHdBAoGBALNG0IeNPGxVbIghHiwQ3VJHHIRo0qDqrWwFfU+Hw0ppx7LYmajrtfXPF6aYySL67GAmnR4pvqTLqYzzHOfK7NwRJY01Kuz9z40P0Ca4aFDHbFRpA9xkJ6d8fj17xagdb4EqJQhh5oHvJ8GPXL1A4VpyHcNlQoR14M+9ojTHIjijAoGAVe32MdBFuQez/nIP6sGiUrNeQRy57X/taXzahiKVXIlglFF/s1xorxLnlMveRdY0OyBdbDFaKxaDhO9nkmHTZoiow0z/StVAVqmTLFA98iC8TsGCvVJcJycLO3Gb2kqQGPX9UAR9rP7X5bc24SOVHLKkTqtPV52wgWGWakYBdTw=" />
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5f599023a4ae0a7f7d0254be" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${CHANNEL_NAME}" />
+        <meta-data
+            android:name="IFLY_APPKEY"
+            android:value="5f0d13df" />
+
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:theme="@style/MOW.AppTheme" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="name,authorities,exported,grantUriPermissions">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"
+                tools:replace="name,resource" />
+        </provider> <!-- <service -->
+        <!-- android:name=".service.KeepLiveService" -->
+        <!-- android:exported="false"> -->
+        <!-- <intent-filter android:priority="1000"> -->
+        <!-- &lt;!&ndash; 系统启动完成后会调用 &ndash;&gt; -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- <action android:name="android.intent.action.DATE_CHANGED" /> -->
+        <!-- <action android:name="android.intent.action.MEDIA_MOUNTED" /> -->
+        <!-- <action android:name="android.intent.action.USER_PRESENT" /> -->
+        <!-- <action android:name="android.intent.action.ACTION_TIME_TICK" /> -->
+        <!-- <action android:name="android.intent.action.ACTION_POWER_CONNECTED" /> -->
+        <!-- <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" /> -->
+        <!-- <action android:name="com.gw.waterregime.KeepLiveService" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <service
+            android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+            android:label="dexopt"
+            android:process=":dexopt" />
+    </application>
+
+</manifest>

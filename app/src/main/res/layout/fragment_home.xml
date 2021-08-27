@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="HomeFragmentBinding">
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/btn_location"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="@dimen/x48"
+                            android:layout_height="@dimen/x48"
+                            android:src="@drawable/ic_home_user_state_svg" />
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:gravity="center|left"
+                                android:textSize="15sp"
+                                android:text="我"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"/>
+                            <TextView
+                                android:gravity="center|left"
+                                android:textSize="15sp"
+                                android:text="2021年8月27日11:01:40"
+                                android:textColor="@color/text_color"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"/>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/line_color"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_icon_svg"/>
+                        <TextView
+                            android:layout_marginLeft="5dp"
+                            android:gravity="center|left|top"
+                            android:text="最后位置："
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            />
+                        <TextView
+
+                            android:textColor="@color/text_color"
+                            android:gravity="center|left|top"
+                            android:text="北京市昌平区科技园区昌盛路18号B1座1-5层高德软件有限公司"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                android:id="@+id/btn_location"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x48"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="+ 添加你想定位的人"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:qmui_backgroundColor="@drawable/btn_ccc_select"
+                app:qmui_borderWidth="1px"
+                app:qmui_isRadiusAdjustBounds="true"
+                app:qmui_radius="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_location"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:text="数据加密|精准定位|更加专业"
+                android:textColor="@color/text_333333"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

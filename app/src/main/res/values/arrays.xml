@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="vill2020_userwatersafe_u_type">
+        <item>请选择单位</item>
+        <item>元/月·户</item>
+        <item>元/人·月</item>
+    </string-array>
+
+</resources>
