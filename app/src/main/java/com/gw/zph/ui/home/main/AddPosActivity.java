@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.databinding.DataBindingUtil;
 
 import com.gw.zph.R;
@@ -37,6 +38,8 @@ public class AddPosActivity extends BaseActivityImpl implements PosSucDialog.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_add_pos);
+        binding.setLifecycleOwner(this);
+        binding.getRoot().setFitsSystemWindows(true);
         initListener();
     }
 
@@ -90,20 +93,24 @@ public class AddPosActivity extends BaseActivityImpl implements PosSucDialog.OnC
     }
 
     private void back() {
-        new QMUIDialog.MessageDialogBuilder(this)
-                .setTitle("提示")
-                .setMessage("确定要退出添加吗？")
-                .addAction("取消", (dialog, index) -> dialog.dismiss())
-                .addAction(0, "确定", QMUIDialogAction.ACTION_PROP_NEGATIVE, (dialog, index) -> {
-                    AddPosActivity.this.finish();
-                    dialog.dismiss();
-                })
-                .show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("提示" );
+        builder.setMessage("确定要退出添加吗？");
+
+        builder.setPositiveButton("确定", (arg0, arg1) -> {
+            // TODO Auto-generated method stub
+            finish();
+            arg0.dismiss();
+        });
+        builder.setNegativeButton("取消", (dialogInterface, i) -> dialogInterface.dismiss());
+        builder.create().show();
     }
 
 
     @Override
     public void onPositiveClick() {
         //点击解锁
+        PayActivity.openActivity(this);
     }
 }

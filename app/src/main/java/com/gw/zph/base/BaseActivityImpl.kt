@@ -6,29 +6,25 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.Gravity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
 import android.widget.ImageView
+import androidx.core.view.ViewCompat.setFitsSystemWindows
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.gw.safty.common.base.BaseActivity
 import com.gw.safty.common.extensions.dp
-import com.gw.safty.common.extensions.exShortToast
 import com.gw.safty.common.extensions.jsonToType
-import com.gw.safty.common.extensions.toJsonString
 import com.gw.safty.common.utils.file.FilePath
-import com.gw.zph.BuildConfig
 import com.gw.zph.R
 import com.gw.zph.application.MyApplication
 import com.gw.zph.core.*
 import com.gw.zph.model.login.bean.UserBean
 import com.gw.zph.ui.login.LoginActivity
-import com.gw.zph.utils.Constants
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 import com.tencent.mmkv.MMKV
 import timber.log.Timber
@@ -39,8 +35,8 @@ open class BaseActivityImpl : BaseActivity() {
     private var reLoginDialog: Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        QMUIStatusBarHelper.translucent(this)
-//        QMUIStatusBarHelper.setStatusBarLightMode(this)
+        QMUIStatusBarHelper.translucent(this)
+        QMUIStatusBarHelper.setStatusBarLightMode(this)
         Timber.e("${this::class.java.simpleName} onCreate")
         if (!StatusHolder.statusInit) {
             val token = getSavedUserToken()

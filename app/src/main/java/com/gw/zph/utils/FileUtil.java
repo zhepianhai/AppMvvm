@@ -4,6 +4,8 @@ import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
+import com.gw.zph.base.db.dao.OffLineLatLngInfo;
+
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -535,7 +537,33 @@ public class FileUtil {
             Log.e("TestFile", "Error on write File:" + e);
         }
     }
+    // 将字符串写入到文本文件中
+    public static void writeTxtToFile(OffLineLatLngInfo info) {
+        //生成文件夹之后，再生成文件，不然会出错
+        String strFilePath = Environment.getExternalStorageDirectory().getPath() + File.separator + Constants.APP_HOME_PATH + Constants.LOCATION_TEST_FILE_PATH + Constants.LOCATION_TEST_FILE_PATH_NAME;
+        create(strFilePath);
+        String infoMessage = JSDateUtil.getDataStringByObj("时间:" + info.getOperateTime() + "，" + "经度:" + info.getLon() + "，" + "纬度:" + info.getLat()) + "\r\n";
+        infoMessage += JSDateUtil.getDataStringByObj("位置:" + info.getAddress());
+        // 每次写入时，都换行写
+        String strContent = infoMessage + "\r\n";
+        strContent += "==================";
+        strContent += "\r\n";
 
+        try {
+            File file = new File(strFilePath);
+            if (!file.exists()) {
+                Log.d("TestFile", "Create the file:" + strFilePath);
+                file.getParentFile().mkdirs();
+                file.createNewFile();
+            }
+            RandomAccessFile raf = new RandomAccessFile(file, "rwd");
+            raf.seek(file.length());
+            raf.write(strContent.getBytes());
+            raf.close();
+        } catch (Exception e) {
+            Log.e("TestFile", "Error on write File:" + e);
+        }
+    }
     /**
      * 压缩文件和文件夹
      *

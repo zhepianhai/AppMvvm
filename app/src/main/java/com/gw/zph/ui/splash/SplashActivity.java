@@ -42,6 +42,7 @@ public class SplashActivity extends BaseActivityImpl {
         setupGlobalHttps();
         //根据判断显示不同的界面
         setContentView(R.layout.activity_splash);
+
         start();
     }
 

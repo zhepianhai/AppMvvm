@@ -7,8 +7,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:background="@color/background"
         android:layout_height="match_parent"
+        android:background="@color/colorHome"
         android:orientation="vertical"
         tools:context=".ui.home.main.AddPosActivity">
 
@@ -21,7 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-            
+
 
             <LinearLayout
                 android:id="@+id/llBack"
@@ -47,208 +47,206 @@
                 android:textSize="@dimen/app_text_large" />
         </RelativeLayout>
 
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/cardView"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x36"
+                android:layout_marginLeft="20dp"
+                android:gravity="center|left"
+                android:text="查看TA的位置"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
             <LinearLayout
-                android:layout_above="@+id/cardView"
-                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="match_parent"
-                    android:gravity="center|left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="@dimen/x36"
                     android:layout_height="@dimen/x36"
-                    android:textSize="20sp"
-                    android:text="查看TA的位置"
-                    android:textStyle="bold"
-                    android:textColor="@android:color/black"/>
-                <LinearLayout
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="@dimen/x36"
-                        android:layout_height="@dimen/x36"
-                        android:src="@drawable/ic_dunpai_svg" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center"
-                        android:text="时刻守护家人朋友安全"
-                        android:textColor="@color/text_color"
-                        android:textSize="16sp"
-                         />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="@dimen/x36"
-                        android:layout_height="@dimen/x36"
-                        android:src="@drawable/ic_feiji_svg" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:gravity="center"
-                        android:text="保证出差旅游安全"
-                        android:textColor="@color/text_color"
-                        android:textSize="16sp"
-                        />
-
-                </LinearLayout>
+                    android:src="@drawable/ic_dunpai_svg" />
 
                 <TextView
-                    android:layout_marginTop="8dp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center"
-                    android:text="更多隐藏黑科技"
+                    android:text="时刻守护家人朋友安全"
                     android:textColor="@color/text_color"
-                    android:textSize="16sp"
-                    />
+                    android:textSize="16sp" />
+
             </LinearLayout>
 
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_centerInParent="true"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="5dp">
+                android:layout_marginTop="8dp">
+
+                <ImageView
+                    android:layout_width="@dimen/x36"
+                    android:layout_height="@dimen/x36"
+                    android:src="@drawable/ic_feiji_svg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="保证出差旅游安全"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="更多隐藏黑科技"
+                android:textColor="@color/text_color"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="@dimen/x48"
+                        android:layout_height="@dimen/x48"
+                        android:src="@drawable/ic_phone_svg" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:text="手机号"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:layout_width="@dimen/x48"
-                            android:layout_height="@dimen/x48"
-                            android:src="@drawable/ic_phone_svg" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:gravity="center"
-                            android:text="手机号"
-                            android:textColor="@android:color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
+                        android:layout_height="@dimen/x48"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="5dp">
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_gravity="center_vertical|center_horizontal"
-                            android:layout_marginTop="5dp"
-                            >
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/edit_bg">
 
-                            <LinearLayout
-                                android:background="@drawable/edit_bg"
-                                android:layout_width="0dp"
+                            <EditText
+                                android:id="@+id/etPhone"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1">
-                                <EditText
-                                    android:drawableLeft="@drawable/ic_search_svg"
-                                    android:hint="请输入手机号..."
-                                    android:id="@+id/etPhone"
-                                    android:inputType="number"
-                                    android:maxLines="1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@null"/>
-
-                            </LinearLayout>
-
-                            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                                android:id="@+id/btn_location"
-                                android:layout_width="80dp"
-                                android:layout_height="@dimen/x48"
-                                android:layout_centerInParent="true"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginLeft="10dp"
-                                android:gravity="center"
-                                android:text="添加定位"
-                                android:textColor="@color/white"
-                                android:textSize="16sp"
-                                app:qmui_backgroundColor="@drawable/btn_ccc_select"
-                                app:qmui_borderWidth="1px"
-                                app:qmui_isRadiusAdjustBounds="true"
-                                app:qmui_radius="5dp" />
+                                android:background="@null"
+                                android:drawableLeft="@drawable/ic_search_svg"
+                                android:hint="请输入手机号..."
+                                android:inputType="number"
+                                android:maxLines="1" />
 
                         </LinearLayout>
-                    </FrameLayout>
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                            android:id="@+id/btn_location"
+                            android:layout_width="80dp"
+                            android:layout_height="@dimen/x36"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="center"
+                            android:text="添加定位"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            app:qmui_backgroundColor="@drawable/btn_ccc_select"
+                            app:qmui_borderWidth="1px"
+                            app:qmui_isRadiusAdjustBounds="true"
+                            app:qmui_radius="5dp" />
 
+                    </LinearLayout>
+                </FrameLayout>
 
-            <LinearLayout
-                android:id="@+id/addWeiXin"
-                android:layout_below="@+id/cardView"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/x50"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/edit_bg">
-
-                <ImageView
-                    android:layout_marginLeft="5dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="@dimen/x36"
-                    android:layout_height="@dimen/x36"
-                    android:src="@drawable/ic_weixin_svg" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center|left"
-                    android:text="添加微信好友"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_marginRight="5dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="@dimen/x36"
-                    android:layout_height="@dimen/x36"
-                    android:src="@drawable/ic_jiantou_svg" />
             </LinearLayout>
-        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
+
+        <LinearLayout
+            android:id="@+id/addWeiXin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x50"
+            android:layout_below="@+id/cardView"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_weixin_svg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="添加微信好友"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_next_svg" />
+        </LinearLayout>
 
 
     </LinearLayout>

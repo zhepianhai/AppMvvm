@@ -1,6 +1,6 @@
 package com.gw.zph.modle;
 
-interface AllSerivice {
+public interface AllSerivice {
 //    /**
 //     * 加载主页面 问题 问题清单
 //     */

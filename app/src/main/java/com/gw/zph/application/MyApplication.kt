@@ -35,7 +35,6 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
     private var mFinalCount: Int = 0
     private val activityList = LinkedList<Activity>()
     private var mamapl: AMapLocation? = null
-
     override fun onCreate() {
         super.onCreate()
         Instance = this
@@ -93,6 +92,7 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
     }
     companion object {
         var Instance: MyApplication by Delegates.notNull()
+        const val LocationTest = true
     }
 
     private fun setupMmkv(){
@@ -161,6 +161,8 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
     fun setMamapl(mamapl: AMapLocation?) {
         this.mamapl = mamapl
     }
+
+
 
     @Throws(IOException::class)
     private fun copyDataBase(dbname: String) {

@@ -14,11 +14,11 @@ android {
         versionCode 10800
         versionName "1.8.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.An0droidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         javaCompileOptions {
-            annotationProcessorOptions { includeCompileClasspath = true }
+            an notationProcessorOptions { includeCompileClasspath = true }
             annotationProcessorOptions {
                 arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
             }

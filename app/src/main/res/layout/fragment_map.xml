@@ -1,14 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.home.map.MapFragment">
+<layout>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data class="MapFragmentBinding"/>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <com.amap.api.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x48"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:background="@color/qmui_config_color_blue"
+                android:layout_height="match_parent">
+                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                    android:id="@+id/btnLoc"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/x48"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:text="+ 添加想定位的人"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:qmui_backgroundColor="@drawable/btn_ccc_select"
+                    app:qmui_borderWidth="1px"
+                    app:qmui_isRadiusAdjustBounds="true"
+                    app:qmui_radius="5dp" />
+                <ImageView
+                    android:id="@+id/imgLoc"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_loc_w_svg"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_gravity="top"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="@dimen/x48"
+                    android:layout_height="@dimen/x48"
+                    android:src="@drawable/ic_home_user_state_svg" />
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:gravity="center|left"
+                            android:textSize="15sp"
+                            android:text="我"
+                            />
+                        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                            android:id="@+id/btnTrack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center"
+                            android:layout_margin="5dp"
+                            android:padding="5dp"
+                            android:text="查看轨迹"
+
+                            android:textColor="@color/white"
+                            android:textSize="14sp"
+                            app:qmui_backgroundColor="@drawable/btn_ccc_select"
+                            app:qmui_borderWidth="1px"
+                            app:qmui_isRadiusAdjustBounds="true"
+                            app:qmui_radius="5dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvTime"
+                        android:gravity="center|left"
+                        android:textSize="15sp"
+                        android:text=""
+                        android:textColor="@color/text_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_margin="5dp"
+                android:background="@color/line_color"/>
+            <LinearLayout
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_icon_svg"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center|left|top"
+                    android:text="最后位置："
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    />
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:textColor="@color/text_color"
+                    android:gravity="center|left|top"
+                    android:text=""
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

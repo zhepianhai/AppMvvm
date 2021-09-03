@@ -48,13 +48,35 @@
                             android:layout_marginLeft="10dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
-                            <TextView
-                                android:gravity="center|left"
-                                android:textSize="15sp"
-                                android:text="我"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:layout_weight="1"/>
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center|left"
+                                    android:textSize="15sp"
+                                    android:text="我"
+                                   />
+                                <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                                    android:id="@+id/btnTrack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center"
+                                    android:padding="5dp"
+                                    android:text="查看轨迹"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp"
+                                    app:qmui_backgroundColor="@drawable/btn_ccc_select"
+                                    app:qmui_borderWidth="1px"
+                                    app:qmui_isRadiusAdjustBounds="true"
+                                    app:qmui_radius="5dp" />
+                            </LinearLayout>
+
                             <TextView
                                 android:gravity="center|left"
                                 android:textSize="15sp"

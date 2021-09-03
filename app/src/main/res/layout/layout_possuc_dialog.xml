@@ -2,69 +2,90 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="30dp"
-    android:paddingRight="30dp"
+    android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="5dp">
-
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
     <LinearLayout
+        android:minWidth="300dp"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <FrameLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/ic_jjsk"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@color/text_333333"
+                android:text="解锁"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"/>
 
-        <ImageView
-            android:id="@+id/img_close"
-            android:layout_gravity="center_horizontal|right"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_close"/>
+            <ImageView
+                android:layout_marginRight="10dp"
+                android:id="@+id/img_close"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical|right"
+                android:src="@drawable/ic_close" />
         </FrameLayout>
 
         <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_width="80dp"
-            android:src="@mipmap/ic_map_gaosi"
-            android:layout_height="120dp"/>
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_loc_gs" />
 
         <TextView
             android:layout_width="match_parent"
-            android:textSize="18sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:gravity="center"
-            android:layout_marginTop="8dp"
+            android:minWidth="200dp"
             android:text="已帮你定到TA的位置"
-            android:layout_height="wrap_content"/>
+            android:textSize="18sp" />
+
         <TextView
             android:layout_width="match_parent"
-            android:textSize="14sp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
             android:text="即可获取权限解锁"
-            android:layout_height="wrap_content"/>
+            android:textSize="14sp" />
 
         <FrameLayout
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-
-        <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-            android:id="@+id/btn_ok"
-            android:layout_width="80dp"
-            android:text="去解锁"
-            android:gravity="center"
-            app:qmui_radius="5dp"
-            app:qmui_isRadiusAdjustBounds="true"
-            app:qmui_backgroundColor="@drawable/btn_ccc_select"
-            android:layout_marginRight="10dp"
-            android:textColor="@color/white"
-            android:layout_marginLeft="10dp"
-            app:qmui_borderWidth="1px"
-            android:layout_gravity="center_horizontal"
-            android:layout_height="@dimen/x36"/>
+            <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
+                android:id="@+id/btn_ok"
+                android:layout_width="120dp"
+                android:layout_height="@dimen/x36"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="去解锁"
+                android:textColor="@color/white"
+                app:qmui_backgroundColor="@drawable/btn_ccc_select"
+                app:qmui_borderWidth="1px"
+                app:qmui_isRadiusAdjustBounds="true"
+                app:qmui_radius="5dp" />
         </FrameLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

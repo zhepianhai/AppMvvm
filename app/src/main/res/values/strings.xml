@@ -29,4 +29,12 @@
     <string name="permission_info_5">为了更好的体验功能，您可以自行选择开启所需的权限，您可以在《权限说明》中了解到权限的详细应用说明</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="zf_sm">温馨提示:\n
+1、本软件为您提供中国大陆地区您本人、您关心的人(包括但不限于家人、朋友)实时位置查询和定位，轨迹查询等服务。请勿用作非法用途;\n
+2、未成年人请在监护者同意后进行购买;\n
+3、按次购买的用户，在一年内有效;\n
+4、购买的会员服务，根据您实际购买的套餐确定失效时间。每次购买后增加会员时长并累计，到期后停止服务，请注意有效时间;\n
+5、根据相关法律法规隐私的规定，请在自己设备上使用，不要在对方不知情的情况下使用;</string>
+
 </resources>

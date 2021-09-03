@@ -3,64 +3,101 @@ package com.gw.zph.ui.home.list;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
+import com.gw.zph.base.BaseFragmentImpl;
+import com.gw.zph.databinding.HomeFragmentBinding;
+import com.gw.zph.databinding.ProListFragmentBinding;
+import com.gw.zph.model.pro.ProBean;
+import com.gw.zph.ui.home.main.AddPosActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProListFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ProListFragment extends Fragment {
+import org.jetbrains.annotations.NotNull;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import javax.annotation.Nullable;
 
+
+public class ProListFragment extends BaseFragmentImpl<ProListFragmentBinding> implements AdpProList.ProItemClickListener {
+    private static final int REQUIRE_PERMISSION = 1;
+    private HomeFragmentViewModel viewModel;
+    private ProListFragmentBinding binder;
+
+    private AdpProList adpProList;
+    private List<ProBean> list;
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_pro_list;
+    }
     public ProListFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProListFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ProListFragment newInstance(String param1, String param2) {
-        ProListFragment fragment = new ProListFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onViewCreated(@NotNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        viewModel = createViewModel(HomeFragmentViewModel.class);
+        setupViewAction();
+        setupViewModel();
+        setupFunction();
+        initRecycle();
+    }
+    private void setupFunction() {
+        binder.refresh.setColorSchemeResources(R.color.colorPrimary,R.color.colorAccent,R.color.yellow,R.color.declaration_item_status_a);
+        binder.refresh.setOnRefreshListener(() -> {
+            new Handler().postDelayed(() -> binder.refresh.setRefreshing(false),3000);
+        });
+
+    }
+    private void setupViewModel() {
+        setupBaseViewModel(viewModel);
     }
 
+    private void setupViewAction() {
+        binder = Objects.requireNonNull(getBinder());
+    }
+
+    private void initRecycle(){
+        list=new ArrayList<>();
+        initVariData();
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        adpProList=new AdpProList(getContext(),list);
+        binder.recycleView.setAdapter(adpProList);
+        binder.recycleView.setLayoutManager(linearLayoutManager);
+        adpProList.setOnItemClickListener(this);
+    }
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pro_list, container, false);
+    public void onVillProjectClickListener(ProBean item) {
+        //Item 点击
+    }
+
+    private void initVariData(){
+        ProBean proBean=new ProBean();
+        proBean.setContent("你们好，我今天终于找到了我一直在找的朋友！我这位朋友打电话不接，发短信也不回，通过这个APP,我一下子就定位到了我朋友，十分感谢...");
+        proBean.setPer("186****8800");
+        proBean.setTime("2021年8月22日15:22");
+        list.add(proBean);
+
+        ProBean proBean1=new ProBean();
+        proBean1.setContent("太感谢了，这款软件太厉害了，只要输入手机号就的查到他的详细位置，他的活动轨全被我知道了，这下的看他还想么说出去");
+        proBean1.setPer("139****2191");
+        proBean1.setTime("2021年8月21日17:16");
+        list.add(proBean1);
+
+        ProBean proBean2=new ProBean();
+        proBean2.setContent("我那大马哈的13岁小儿子今天出去玩，把手机调成了静音。一直联系不上，吓死我了，多亏了这个软件，我在定位附近一下就发现他了");
+        proBean2.setPer("138****1168");
+        proBean2.setTime("2021年8月22日12:23");
+        list.add(proBean2);
     }
 }

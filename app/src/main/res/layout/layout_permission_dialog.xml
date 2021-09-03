@@ -5,11 +5,12 @@
     android:layout_height="match_parent"
     android:paddingLeft="30dp"
     android:paddingRight="30dp"
-    app:cardBackgroundColor="@color/white"
+    app:cardBackgroundColor="@color/transparent"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp">
 
     <LinearLayout
+        android:background="@drawable/ic_price_select_bg_03"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content">
 
             <LinearLayout
+                android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -76,7 +78,7 @@
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginBottom="10dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -88,6 +90,7 @@
                         android:text="@string/dialog_cancel"
                         android:gravity="center"
                         app:qmui_radius="5dp"
+                        android:textColor="@color/text_333333"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         app:qmui_borderWidth="1px"

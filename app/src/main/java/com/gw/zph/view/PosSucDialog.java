@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import com.gw.zph.R;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
+import java.util.Objects;
+
 public class PosSucDialog extends Dialog implements View.OnClickListener{
     private Context mContext;
     private ImageView close;
@@ -31,6 +33,7 @@ public class PosSucDialog extends Dialog implements View.OnClickListener{
         setContentView(R.layout.layout_possuc_dialog);
         //按空白处不能取消动画
         setCanceledOnTouchOutside(false);
+        Objects.requireNonNull(getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         close=findViewById(R.id.img_close);
         btnOk=findViewById(R.id.btn_ok);
         close.setOnClickListener(this);

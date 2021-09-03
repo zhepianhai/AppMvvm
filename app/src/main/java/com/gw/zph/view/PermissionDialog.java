@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import com.gw.zph.R;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
+import java.util.Objects;
+
 public class PermissionDialog extends Dialog implements View.OnClickListener {
     private Context mContext;
     private QMUIRoundButton btnDis,btnOk;
@@ -34,6 +36,8 @@ public class PermissionDialog extends Dialog implements View.OnClickListener {
         setContentView(R.layout.layout_permission_dialog);
         //按空白处不能取消动画
         setCanceledOnTouchOutside(false);
+
+        Objects.requireNonNull(getWindow()).setBackgroundDrawableResource(android.R.color.transparent);
         btnDis=findViewById(R.id.btn_dis);
         btnOk=findViewById(R.id.btn_ok);
         btnDis.setOnClickListener(this);
