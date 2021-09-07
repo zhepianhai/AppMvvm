@@ -33,6 +33,9 @@ import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
 import com.gw.zph.application.MyApplication;
 import com.gw.zph.base.BaseFragmentImpl;
+import com.gw.zph.base.db.DbHelper;
+import com.gw.zph.base.db.dao.OffLineLatLngInfo;
+import com.gw.zph.base.db.dao.OffLineLatLngInfoDao;
 import com.gw.zph.core.StatusHolder;
 import com.gw.zph.databinding.HomeFragmentBinding;
 import com.gw.zph.databinding.MapFragmentBinding;
@@ -48,6 +51,7 @@ import org.jetbrains.annotations.NotNull;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import javax.annotation.Nullable;
@@ -66,13 +70,16 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
     public AMap mAMap;
     public AMapLocationClient mLocationClient = null;
     public AMapLocationClientOption mLocationOption = null;
+
     public MapFragment() {
 
     }
+
     @Override
     public int getLayoutId() {
         return R.layout.fragment_map;
     }
+
     @Override
     public void onViewCreated(@NotNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -82,6 +89,7 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
         setupFunction();
         checkMap(savedInstanceState);
     }
+
     private void setupViewModel() {
         setupBaseViewModel(viewModel);
     }
@@ -89,39 +97,42 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
     private void setupViewAction() {
         application = (MyApplication) getActivity().getApplication();
         binder = Objects.requireNonNull(getBinder());
-        userBean= StatusHolder.INSTANCE.getLoginUserBean();
+        userBean = StatusHolder.INSTANCE.getLoginUserBean();
     }
-    private void setupFunction(){
-        binder.btnLoc.setOnClickListener(v->{
+
+    private void setupFunction() {
+        binder.btnLoc.setOnClickListener(v -> {
             AddPosActivity.openActivity(getContext());
         });
-        binder.btnTrack.setOnClickListener(v->{
-
+        binder.btnTrack.setOnClickListener(v -> {
+            TrackedActivity.openActivity(getContext(), "100");
         });
-        binder.imgLoc.setOnClickListener(v->{
+        binder.imgLoc.setOnClickListener(v -> {
             if (mLocationClient != null) {
                 mLocationClient.stopLocation();
                 mLocationClient.startLocation();
             }
         });
     }
-    private void checkMap(Bundle savedInstanceState){
-        if(hasExternalStoragePermission()){
+
+    private void checkMap(Bundle savedInstanceState) {
+        if (hasExternalStoragePermission()) {
             initMap(savedInstanceState);
-        }else{
+        } else {
             getFilePermission();
         }
     }
-    private void initMap(Bundle savedInstanceState){
+
+    private void initMap(Bundle savedInstanceState) {
         binder.map.onCreate(savedInstanceState);
-        mAMap=binder.map.getMap();
+        mAMap = binder.map.getMap();
         MyLocationStyle myLocationStyle;
 
         myLocationStyle = new MyLocationStyle();//初始化定位蓝点样式类myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);//连续定位、且将视角移动到地图中心点，定位点依照设备方向旋转，并且会跟随设备移动。（1秒1次定位）如果不设置myLocationType，默认也会执行此种模式。
         myLocationStyle.myLocationIcon(BitmapDescriptorFactory.fromResource(R.drawable.ic_map_loc));
         myLocationStyle.strokeColor(Color.argb(40, 177, 225, 248));// 设置圆形的边框颜色
         myLocationStyle.radiusFillColor(Color.argb(40, 177, 225, 248));// 设置圆形的填充颜色
-        myLocationStyle.anchor(0.5f,0.5f); // 这个数值是根据我的图片显示的时候计算的，最好是0.5 0.5
+        myLocationStyle.anchor(0.5f, 0.5f); // 这个数值是根据我的图片显示的时候计算的，最好是0.5 0.5
         myLocationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE_NO_CENTER);
 
         mAMap.setMyLocationStyle(myLocationStyle);//设置定位蓝点的Style
@@ -134,12 +145,13 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
         uiSettings.setZoomControlsEnabled(false);//设置缩放按钮不可用
         uiSettings.setTiltGesturesEnabled(false);//设置地图不可倾斜
         uiSettings.setRotateGesturesEnabled(false);//设置地图是不可旋转
-//        uiSettings.setLogoBottomMargin(-38);//隐藏logo
+        uiSettings.setLogoBottomMargin(-38);//隐藏logo
         uiSettings.setScaleControlsEnabled(false);//控制比例尺控件是否显示
 
         setUpLocation();
     }
-    private void setUpLocation(){
+
+    private void setUpLocation() {
         //初始化定位
         mLocationClient = new AMapLocationClient(getContext().getApplicationContext());
         //设置定位回调监听
@@ -160,9 +172,11 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
         mLocationClient.stopLocation();
         mLocationClient.startLocation();
     }
+
     private boolean hasExternalStoragePermission() {
         int perm = this.getActivity().checkCallingOrSelfPermission("android.permission.ACCESS_FINE_LOCATION");
         return perm == PackageManager.PERMISSION_GRANTED;
+
     }
 
     private void getFilePermission() {
@@ -171,6 +185,7 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
             if (this.getActivity().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 permissionsList.add(Manifest.permission.ACCESS_FINE_LOCATION);
             }
+
             if (permissionsList.size() > 0) {
                 requestPermissions(permissionsList.toArray(new String[permissionsList.size()]), REQUIRE_PERMISSION);
             }
@@ -179,17 +194,16 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
 
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
-        if (userBean != null) {
+//        if (userBean != null) {
             if (!ServiceUtil.isServiceRunning(getContext(), "com.gw.zph.service.service.LocationService")) {
                 getActivity().startService(new Intent(getActivity(), LocationService.class));
                 getActivity().startService(new Intent(getActivity(), KeepLiveService.class));
             }
-        }
-        else {
-            MyNotificationManagerUtil myNotificationManagerUtil = new MyNotificationManagerUtil(getContext());
-            myNotificationManagerUtil.clearNotification();
-
-        }
+//        } else {
+//            MyNotificationManagerUtil myNotificationManagerUtil = new MyNotificationManagerUtil(getContext());
+//            myNotificationManagerUtil.clearNotification();
+//
+//        }
         mamapl = aMapLocation.clone();
         MyApplication application = (MyApplication) getActivity().getApplication();
         application.setMamapl(mamapl);
@@ -205,7 +219,20 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
             mAMap.moveCamera(mCameraUpdate);//缩放地图到指定的缩放级别
             binder.tvTime.setText(sdf1.format(new Date()));
             binder.tvLocation.setText(JSDateUtil.getDataStringByObj(mamapl.getAddress()));
-        }else {
+
+            OffLineLatLngInfo info = new OffLineLatLngInfo();
+            info.setAdCode(mamapl.getAdCode());
+            info.setPersId("100");
+            info.setPersName("我");
+            info.setLat(mamapl.getLatitude());
+            info.setLon(mamapl.getLongitude());
+            info.setOperateTime(sdf1.format(new Date().getTime()));
+            info.setMobile("");
+            info.setAddress(JSDateUtil.getDataStringByObj(mamapl.getAddress()));
+            info.setSpeed(mamapl.getSpeed());
+            DbHelper.getInstance().offLineLatLngInfoLocDBManager().insert(info);
+
+        } else {
             //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
             Log.e("AmapError", "location Error, ErrCode:"
                     + aMapLocation.getErrorCode() + ", errInfo:"

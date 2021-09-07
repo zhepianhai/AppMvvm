@@ -78,9 +78,10 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/tvTime"
                                 android:gravity="center|left"
                                 android:textSize="15sp"
-                                android:text="2021年8月27日11:01:40"
+                                android:text=""
                                 android:textColor="@color/text_color"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
@@ -108,10 +109,10 @@
                             android:layout_height="match_parent"
                             />
                         <TextView
-
+                            android:id="@+id/tvLocation"
                             android:textColor="@color/text_color"
                             android:gravity="center|left|top"
-                            android:text="北京市昌平区科技园区昌盛路18号B1座1-5层高德软件有限公司"
+                            android:text=""
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             />

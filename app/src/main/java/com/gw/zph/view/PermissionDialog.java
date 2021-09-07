@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.gw.zph.R;
+import com.gw.zph.ui.commend.PrivatePolicyActivity;
 import com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton;
 
 import java.util.Objects;
@@ -42,11 +43,21 @@ public class PermissionDialog extends Dialog implements View.OnClickListener {
         btnOk=findViewById(R.id.btn_ok);
         btnDis.setOnClickListener(this);
         btnOk.setOnClickListener(this);
+        findViewById(R.id.tvUser).setOnClickListener(this);
+        findViewById(R.id.tvPri).setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.tvUser:
+                PrivatePolicyActivity.openActivity(mContext,PrivatePolicyActivity.TYPE_2);
+                break;
+            case R.id.tvPri:
+                PrivatePolicyActivity.openActivity(mContext,PrivatePolicyActivity.TYPE_1);
+                break;
             case R.id.btn_dis:
+                System.exit(0);
+                break;
             case R.id.btn_ok:
                 onClickBottomListener.onPositiveClick();
                 dismiss();

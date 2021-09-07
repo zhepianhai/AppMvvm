@@ -3,13 +3,13 @@ package com.gw.zph.core
 import com.gw.zph.BuildConfig
 
 //各种url地址
-const val API_APP_BASE_URL = "http://hzz-monitor.goldenwater.com.cn/"//河湖URL 以前的版本河湖的接口
+const val API_APP_BASE_URL = ""
 const val API_BASE_URL = API_APP_BASE_URL //??
-const val API_APP_BASE_URL_RAIN = "http://10.1.3.192:8899/"
-const val API_APP_GLOBEVIEW_URL="https://service.globeview.cn/"
+const val API_APP_BASE_URL_RAIN = ""
+const val API_APP_GLOBEVIEW_URL=""
 
 //云游九州 多时相服务IP
-const val API_APP_YYJZ_DSX_URL = "http://10.1.195.46:8812"
+const val API_APP_YYJZ_DSX_URL = ""
 
 
 //给网络请求添加的请求头名称
@@ -18,7 +18,7 @@ const val URL_NAME_DEFAULT = "default"
 const val URL_NAME_EMERGENCY = "emergency"
 const val URL_NAME_EMERGENCY_RAIN = "emergency_rain"
 const val URL_NAME_EMERGENCY_GLOBEVIEW= "emergency_globeview"
-const val URL_NAME_EMERGENCY_YYJZ = "emergency_yyjz" //云游九州多时相服务
+const val URL_NAME_EMERGENCY_YYJZ = "emergency_yyjz"
 const val URL_NAME_EMERGENCY_GAODE = "emergency_gaode" //高德服务
 
 const val LIST = "list"

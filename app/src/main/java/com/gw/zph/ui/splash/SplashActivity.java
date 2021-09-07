@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
@@ -64,7 +65,10 @@ public class SplashActivity extends BaseActivityImpl {
     private void start() {
         setupViewModel();
         getIntentExtra();
-        viewModel.loadVersionInfo(String.valueOf(BuildConfig.VERSION_CODE));
+        new Handler().postDelayed(() -> {
+            defaultLoadMain();
+        }, 3000);
+//        viewModel.loadVersionInfo(String.valueOf(BuildConfig.VERSION_CODE));
     }
 
     private void setupViewModel() {

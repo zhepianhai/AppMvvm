@@ -134,7 +134,8 @@ public class PermissionActivity extends AppCompatActivity implements PermissionD
             Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CALL_PHONE,
             Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.CAMERA,
             Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CHANGE_NETWORK_STATE,
-            Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECORD_AUDIO
+            Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECORD_AUDIO,
+            Manifest.permission.FOREGROUND_SERVICE
     };
 
     public static boolean hasPermissions(Context context) {

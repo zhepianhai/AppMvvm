@@ -21,7 +21,7 @@
     <!--更新对话框-->
     <string name="update_source">更新内容：</string>
     <string name="once_update">立即升级</string>
-    <string name="permission_info">本应用重视与保障您的个人隐私，我们依据最新的监管要求更新了《用户协议》和《隐私政策》。</string>
+    <string name="permission_info">本应用重视与保障您的个人隐私，我们依据最新的监管要求更新了</string>
     <string name="permission_info_1">本应用所需的应用权限如下：</string>
     <string name="permission_info_2">1.定位：获取gps、网络位置信息的权限。</string>
     <string name="permission_info_3">2.存储：存储或修改图片文件权限。</string>

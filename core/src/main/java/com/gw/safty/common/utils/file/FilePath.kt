@@ -16,7 +16,7 @@ object FilePath {
     private const val LUBAN_CACHE_PATH = "/luban"
 
 
-     const val APP_HOME_PATH = "sldc"
+     const val APP_HOME_PATH = "zphPrj"
      const val TAKE_MEDIA_FILE_PATH = "/Image"
      const val TAKE_MEDIA_FILE_PATH_SOURECE = "/ImageSource"
      const val TAKE_MEDIA_FILE_PATH_TEMP = "/Temp"

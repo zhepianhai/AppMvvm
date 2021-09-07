@@ -22,11 +22,13 @@ public class DaoMaster extends AbstractDaoMaster {
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(Database db, boolean ifNotExists) {
         OffLineLatLngInfoDao.createTable(db, ifNotExists);
+        ProBeanDao.createTable(db, ifNotExists);
     }
 
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(Database db, boolean ifExists) {
         OffLineLatLngInfoDao.dropTable(db, ifExists);
+        ProBeanDao.dropTable(db, ifExists);
     }
 
     /**
@@ -47,6 +49,7 @@ public class DaoMaster extends AbstractDaoMaster {
         super(db, SCHEMA_VERSION);
         registerDaoClass(AddressBeanDao.class);
         registerDaoClass(OffLineLatLngInfoDao.class);
+        registerDaoClass(ProBeanDao.class);
     }
 
     public DaoSession newSession() {

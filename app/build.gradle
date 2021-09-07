@@ -11,14 +11,14 @@ android {
         applicationId "com.gw.zph"
         minSdkVersion build_versions.min_sdk
         targetSdkVersion build_versions.target_sdk
-        versionCode 10800
-        versionName "1.8.0"
+        versionCode 10000
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.An0droidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
         javaCompileOptions {
-            an notationProcessorOptions { includeCompileClasspath = true }
+            annotationProcessorOptions { includeCompileClasspath = true }
             annotationProcessorOptions {
                 arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
@@ -66,7 +66,7 @@ android {
             buildConfigField "boolean", "DEBUG_MODE", "true"
             buildConfigField "boolean", "appendApi", "false"
             buildConfigField 'String', 'FLAVORS', '\"\"'
-            buildConfigField "String", "BASE_URL", "\"https://slbdc.mwr.gov.cn/\""
+            buildConfigField "String", "BASE_URL", "\"http://10.1.102.136:8100/\""
         }
         Prod {
             dimension "release"
@@ -76,7 +76,6 @@ android {
             buildConfigField "boolean", "appendPdc", "false"
             buildConfigField 'String', 'FLAVORS', '\"\"'
             buildConfigField "String", "BASE_URL", "\"http://10.1.102.136:8100/\""
-//            buildConfigField "String", "BASE_URL", "\"https://slbdc.mwr.gov.cn/\""
         }
     }
     dataBinding {

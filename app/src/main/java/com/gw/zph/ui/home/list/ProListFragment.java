@@ -2,21 +2,16 @@ package com.gw.zph.ui.home.list;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Handler;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
 import com.gw.zph.base.BaseFragmentImpl;
-import com.gw.zph.databinding.HomeFragmentBinding;
 import com.gw.zph.databinding.ProListFragmentBinding;
-import com.gw.zph.model.pro.ProBean;
-import com.gw.zph.ui.home.main.AddPosActivity;
+import com.gw.zph.base.db.dao.ProBean;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -63,6 +58,12 @@ public class ProListFragment extends BaseFragmentImpl<ProListFragmentBinding> im
 
     private void setupViewAction() {
         binder = Objects.requireNonNull(getBinder());
+        binder.lay0.setOnClickListener(v->{
+            LetterEditActivity.openActivity(getContext());
+        });
+        binder.lay1.setOnClickListener(v->{
+            MyLetterActivity.openActivity(getContext());
+        });
     }
 
     private void initRecycle(){

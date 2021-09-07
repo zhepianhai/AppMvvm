@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import com.gw.zph.R;
 import com.gw.zph.base.BaseActivityImpl;
 import com.gw.zph.databinding.LoginActivityBinding;
+import com.gw.zph.ui.commend.PrivatePolicyActivity;
 import com.gw.zph.ui.home.main.AddPosActivity;
 
 public class LoginActivity extends BaseActivityImpl {
@@ -40,6 +41,12 @@ public class LoginActivity extends BaseActivityImpl {
         });
         binding.btnLoginOth.setOnClickListener(v->{
 
+        });
+        binding.tvUser.setOnClickListener(v->{
+            PrivatePolicyActivity.openActivity(this,PrivatePolicyActivity.TYPE_2);
+        });
+        binding.tvPri.setOnClickListener(v->{
+            PrivatePolicyActivity.openActivity(this,PrivatePolicyActivity.TYPE_1);
         });
     }
 

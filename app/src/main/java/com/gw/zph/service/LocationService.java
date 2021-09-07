@@ -24,7 +24,9 @@ import com.amap.api.maps.AMapUtils;
 import com.amap.api.maps.model.LatLng;
 import com.gw.safty.common.network.BaseResponse;
 import com.gw.safty.common.utils.JSDateUtil;
+import com.gw.safty.common.utils.MyNotificationManagerUtil;
 import com.gw.safty.common.utils.NetUtil;
+import com.gw.zph.R;
 import com.gw.zph.application.MyApplication;
 import com.gw.zph.base.db.DbHelper;
 import com.gw.zph.base.db.dao.OffLineLatLngInfo;
@@ -125,7 +127,7 @@ public class LocationService extends Service {
 //            myNotificationManagerUtil.setOngoing(true);
 //            myNotificationManagerUtil.setPriority(Notification.PRIORITY_HIGH);
 //            myNotificationManagerUtil.setOnlyAlertOnce(true);
-//            myNotificationManagerUtil.sendNotification(1, "水利督查", "水利督查持续定位中...", R.mipmap.ic_launcher);
+//            myNotificationManagerUtil.sendNotification(1, "超级定位", "超级定位后台运行中...", R.mipmap.ic_launcher);
 //        } catch (Exception e) {
 //        }
     }

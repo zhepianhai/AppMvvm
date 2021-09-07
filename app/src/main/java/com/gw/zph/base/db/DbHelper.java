@@ -6,6 +6,8 @@ import android.content.Context;
 import com.gw.zph.base.db.dao.DaoMaster;
 import com.gw.zph.base.db.dao.DaoSession;
 import com.gw.zph.base.db.dao.OffLineLatLngInfo;
+import com.gw.zph.base.db.dao.ProBean;
+import com.gw.zph.base.db.dao.ProBeanDao;
 
 import org.greenrobot.greendao.AbstractDao;
 
@@ -54,7 +56,7 @@ public class DbHelper {
 
     private DaoSession mBasicPromblemDaoSession; //获取'问题'基本信息使用
     private DBManager<OffLineLatLngInfo, Long> offLineLatLngInfoDBManager;
-
+    private DBManager<ProBean, Long> proBeanDaoLongDBManager;
     private DBManager<AddressBean, String> mAddresDBManager;
 
 
@@ -109,7 +111,17 @@ public class DbHelper {
         return offLineLatLngInfoDBManager;
     }
 
-
+    public DBManager<ProBean, Long> getProBeanDaoLongDBManager() {
+        if(proBeanDaoLongDBManager==null){
+            proBeanDaoLongDBManager=new DBManager<ProBean, Long>() {
+                @Override
+                public AbstractDao<ProBean, Long> getAbstractDao() {
+                    return mDaoSession.getProBeanDao();
+                }
+            };
+        }
+        return proBeanDaoLongDBManager;
+    }
 
 
 

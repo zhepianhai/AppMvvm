@@ -44,7 +44,7 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
         setupTimber()
         setupMmkv()
         initSpeech()
-//        initDb()
+        initDb()
         initUM()
         initEventBus()
         initQMUI()
@@ -65,16 +65,16 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
     private fun initQMUI(){
         QMUISwipeBackActivityManager.init(this)
     }
-//    private fun initDb() {
-//        //复制assets目录下的数据库文件到应用数据库中
+    private fun initDb() {
+        //复制assets目录下的数据库文件到应用数据库中
 //        try {
 //            copyDataBase("dbtest.db")
 //            insertExternalDatabase(DbHelper.BASIC_PROBLEM_DB_NAME)
 //        } catch (e: Exception) {
 //        }
-//        DbHelper.getInstance().initAddr(this) //初始化外部数据库
-//        DbHelper.getInstance().init(this) //数据库初始化
-//    }
+        DbHelper.getInstance().initAddr(this) //初始化外部数据库
+        DbHelper.getInstance().init(this) //数据库初始化
+    }
     private fun initUM(){
         //设置LOG开关，默认为false
         /**
@@ -85,7 +85,7 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
          */
         //设置LOG开关，默认为false
         UMConfigure.setLogEnabled(true)
-        UMConfigure.init(this, "5f599023a4ae0a7f7d0254be", BuildConfig.BUILD_TYPE, UMConfigure.DEVICE_TYPE_PHONE, "")
+        UMConfigure.init(this, "613712695f3497702f2360ab", BuildConfig.BUILD_TYPE, UMConfigure.DEVICE_TYPE_PHONE, "")
 //        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null)
         // 选用LEGACY_AUTO页面采集模式
         MobclickAgent.setPageCollectionMode(MobclickAgent.PageMode.LEGACY_AUTO)
