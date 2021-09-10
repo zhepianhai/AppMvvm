@@ -12,6 +12,7 @@ import com.gw.safty.common.UncaughtExceptionCatcher
 import com.gw.zph.BuildConfig
 import com.gw.zph.base.db.DbHelper
 import com.gw.zph.core.network.RetrofitClient
+import com.gw.zph.utils.umeng.PushHelper
 import com.iflytek.cloud.SpeechConstant
 import com.iflytek.cloud.SpeechUtility
 import com.jeremyliao.liveeventbus.LiveEventBus
@@ -85,6 +86,8 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
          */
         //设置LOG开关，默认为false
         UMConfigure.setLogEnabled(true)
+//        PushHelper.init(this);
+//        UMConfigure.preInit()
         UMConfigure.init(this, "613712695f3497702f2360ab", BuildConfig.BUILD_TYPE, UMConfigure.DEVICE_TYPE_PHONE, "")
 //        UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, null)
         // 选用LEGACY_AUTO页面采集模式

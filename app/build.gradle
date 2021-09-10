@@ -165,8 +165,12 @@ dependencies {
 
     implementation 'com.github.promeg:tinypinyin:1.0.0' // ~80KB
     //友盟统计
-    implementation 'com.umeng.umsdk:analytics:8.0.0'
-    implementation 'com.umeng.umsdk:common:2.0.0'
+//    implementation 'com.umeng.umsdk:analytics:8.0.0'
+    implementation  'com.umeng.umsdk:asms:1.4.1'// 必选
+        //友盟基础库依赖（必须）
+    implementation 'com.umeng.umsdk:common:9.4.2'
+        //友盟Push依赖
+//    implementation 'com.umeng.umsdk:push:6.4.0'
     //阿里云热更新
     implementation 'com.aliyun.ams:alicloud-android-hotfix:3.2.14'
     implementation 'com.github.mcxtzhang:SuspensionIndexBar:V1.0.0'

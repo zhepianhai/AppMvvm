@@ -271,7 +271,7 @@ ext.deps = deps
 def addRepos(RepositoryHandler handler) {
 //    handler.google()
 //    handler.jcenter()
-//    handler.mavenCentral()
+    handler.mavenCentral()
     handler.maven {url 'https://maven.aliyun.com/repository/google/'}
     handler.maven {url 'https://maven.aliyun.com/repository/public/'}
     handler.maven {url 'https://maven.aliyun.com/repository/gradle-plugin/'}
@@ -280,7 +280,7 @@ def addRepos(RepositoryHandler handler) {
     handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     handler.maven { url 'https://dl.bintray.com/umsdk/release' }
-    handler.maven { url 'https://repo1.maven.org/maven2/' }
+//    handler.maven { url 'https://repo1.maven.org/maven2/' }
     handler.maven { url 'http://maven.aliyun.com/nexus/content/repositories/releases/' }
 }
 ext.addRepos = this.&addRepos

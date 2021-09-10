@@ -41,6 +41,9 @@
     <uses-permission
         android:name="android.permission.INJECT_EVENTS"
         tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        tools:node="remove" />
 
     <application
         android:name=".application.SophixStubApplication"
@@ -57,17 +60,19 @@
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.commend.PrivatePolicyActivity"></activity>
+        <activity android:name=".ui.message.MessageEditActivity"></activity>
+        <activity android:name=".ui.message.MessageListActivity" />
+        <activity android:name=".ui.commend.PrivatePolicyActivity" />
         <activity android:name=".ui.home.map.TrackedActivity" />
         <activity android:name=".ui.home.list.LetterEditActivity" />
         <activity android:name=".ui.home.list.MyLetterActivity" />
         <activity android:name=".ui.home.main.PayActivity" />
         <activity android:name=".ui.home.main.AddPosActivity" />
-        <activity android:name=".ui.home.MainActivity"
-            android:launchMode="singleTask"
+        <activity
+            android:name=".ui.home.MainActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"
-            android:windowSoftInputMode="adjustPan|stateHidden"
-            />
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".ui.PermissionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -107,8 +112,7 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"
-            android:launchMode="singleTask"
-            />
+            android:launchMode="singleTask" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
