@@ -200,7 +200,7 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
         if (userBean != null) {
-            if (!ServiceUtil.isServiceRunning(getContext(), "com.gw.zph.service.service.LocationService")) {
+            if (!ServiceUtil.isServiceRunning(getContext(), "com.gw.zph.service.LocationService")) {
                 getActivity().startService(new Intent(getActivity(), LocationService.class));
                 getActivity().startService(new Intent(getActivity(), KeepLiveService.class));
             }

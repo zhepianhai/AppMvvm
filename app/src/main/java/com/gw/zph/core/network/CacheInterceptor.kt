@@ -13,10 +13,6 @@ class CacheInterceptor : Interceptor {
 
         val newRequest = chain.request()
             .newBuilder()
-            .addHeader("version", API_VERSION)
-            .addHeader("client", API_CLIENT)
-            .addHeader("source", "${Device.brand},${Device.model}")
-            .addHeader("uid", Device.imei)
             .build()
 
         //通过给定的键url_name,从request中获取headers

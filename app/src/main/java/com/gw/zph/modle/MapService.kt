@@ -21,10 +21,16 @@ interface MapService {
 //        @Body bean: List<OffLineLatLngInfo>
 //    ): Call<BaseResponse>
 
-    //新增
+//    //新增
+//    @Headers("$URL_NAME:$URL_NAME_EMERGENCY")
+//    @POST("bis/tracked/listInsert")
+//     fun addTrackedList(
+//        @Body bean: List<OffLineLatLngInfo>
+//    ):  Call<CommonResponse<List<OffLineLatLngInfo>>>
+
     @Headers("$URL_NAME:$URL_NAME_EMERGENCY")
     @POST("bis/tracked/listInsert")
      fun addTrackedList(
         @Body bean: List<OffLineLatLngInfo>
-    ): Call<BaseResponse>
+    ): Call<CommonResponse<Any>>
 }

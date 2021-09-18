@@ -165,6 +165,7 @@
                             android:id="@+id/etPhone"
                             android:maxLength="14"
                             android:maxLines="1"
+                            android:inputType="number"
                             android:hint="请输入手机号"
                             android:layout_height="match_parent"
                             android:layout_width="match_parent"
@@ -172,7 +173,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/x48"
                         android:orientation="horizontal">
@@ -192,7 +193,7 @@
                     </LinearLayout>
                     <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
                         android:id="@+id/btn_login_psd"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/x40"
                         android:layout_centerInParent="true"
@@ -210,7 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/x48"
                         android:orientation="horizontal"
-                        android:layout_marginTop="10dp">
+                        android:layout_marginTop="20dp">
                         <TextView
                             android:id="@+id/tvOne"
                             android:layout_width="0dp"

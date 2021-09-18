@@ -17,6 +17,7 @@ import com.gw.zph.databinding.RegisterActivityBinding;
 import com.gw.zph.model.login.bean.UserBean;
 import com.gw.zph.modle.AllVm;
 import com.gw.zph.utils.Constants;
+import com.gw.zph.utils.MCString;
 
 public class RegisterActivity extends BaseActivityImpl {
     private RegisterActivityBinding binding;
@@ -58,6 +59,10 @@ public class RegisterActivity extends BaseActivityImpl {
         String psd2=binding.etPsd1.getText().toString().trim();
         if(TextUtils.isEmpty(phone)){
             ToastUtil.showToast(this,"请输入手机号！");
+            return;
+        }
+        if (!MCString.isMobileNO(phone)) {
+            ToastUtil.showToast(this,"请输入有效的手机号码！");
             return;
         }
         if(TextUtils.isEmpty(psd1)){

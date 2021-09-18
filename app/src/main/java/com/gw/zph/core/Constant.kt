@@ -20,6 +20,7 @@ const val URL_NAME_EMERGENCY_RAIN = "emergency_rain"
 const val URL_NAME_EMERGENCY_GLOBEVIEW= "emergency_globeview"
 const val URL_NAME_EMERGENCY_YYJZ = "emergency_yyjz"
 const val URL_NAME_EMERGENCY_GAODE = "emergency_gaode" //高德服务
+const val COLON = ":"
 
 const val LIST = "list"
 const val ROLEINFOLIST = "roleInfoList"

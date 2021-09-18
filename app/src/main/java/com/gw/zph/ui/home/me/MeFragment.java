@@ -12,6 +12,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.FileProvider;
 
 import com.cmic.sso.sdk.activity.LoginAuthActivity;
@@ -25,6 +26,7 @@ import com.gw.zph.ui.home.main.AddPosActivity;
 import com.gw.zph.ui.login.LoginActivity;
 import com.gw.zph.ui.message.MessageListActivity;
 import com.gw.zph.utils.JSDateUtil;
+import com.gw.zph.utils.SharePreferencesUtils;
 import com.gw.zph.view.LoginTipDialog;
 
 import org.jetbrains.annotations.NotNull;
@@ -65,15 +67,15 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
     @Override
     public void onResume() {
         super.onResume();
-        if(StatusHolder.INSTANCE.getCurUserBean(getContext())==null) {
+        if (StatusHolder.INSTANCE.getCurUserBean(getContext()) == null) {
             double r1 = Math.random();
             double r2 = Math.random();
             if (r1 > 0.5 && r2 > 0.5) {
                 showLogin();
             }
         }
-        if(binder.btnLogin.getText().equals("登录")){
-            if(StatusHolder.INSTANCE.getCurUserBean(getContext())!=null){
+        if (binder.btnLogin.getText().equals("登录")) {
+            if (StatusHolder.INSTANCE.getCurUserBean(getContext()) != null) {
                 binder.btnLogin.setText("+添加想定位的人");
                 binder.btnLout.setVisibility(View.VISIBLE);
                 binder.tvNPhone.setText(JSDateUtil.phoneNumber(StatusHolder.INSTANCE.getCurUserBean(getContext()).getPhone()));
@@ -101,7 +103,6 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
         }
 
 
-
         try {
             binder.tvVersion.setText(JSDateUtil.getDataStringByObj(getVersionName()));
         } catch (Exception e) {
@@ -124,22 +125,35 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
         });
         binder.layYHXY.setOnClickListener(v -> {
             //用户协议
-            PrivatePolicyActivity.openActivity(getContext(),PrivatePolicyActivity.TYPE_2);
+            PrivatePolicyActivity.openActivity(getContext(), PrivatePolicyActivity.TYPE_2);
         });
         binder.layYS.setOnClickListener(v -> {
             //隐私
-            PrivatePolicyActivity.openActivity(getContext(),PrivatePolicyActivity.TYPE_1);
+            PrivatePolicyActivity.openActivity(getContext(), PrivatePolicyActivity.TYPE_1);
         });
-        binder.btnLout.setOnClickListener(v->{
+        binder.btnLout.setOnClickListener(v -> {
             //退出
-            StatusHolder.INSTANCE.reset(getContext());
-            System.exit(0);
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+
+            builder.setTitle("提示");
+            builder.setMessage("是否退出登录？");
+
+            builder.setPositiveButton("确定", (arg0, arg1) -> {
+                // TODO Auto-generated method stub
+                SharePreferencesUtils.setTokenData(getContext(), "");
+                arg0.dismiss();
+                getActivity().finish();
+            });
+            builder.setNegativeButton("取消", (dialogInterface, i) -> dialogInterface.dismiss());
+            builder.create().show();
         });
     }
-    private void showLogin(){
-        LoginTipDialog  dialog=new LoginTipDialog(getContext());
+
+    private void showLogin() {
+        LoginTipDialog dialog = new LoginTipDialog(getContext());
         dialog.show();
     }
+
     public void onShareClicked() {
         Uri uri;
         Resources resources = getResources();
@@ -154,6 +168,7 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
             System.out.println("资源");
         }
     }
+
     private String getVersionName() throws Exception {
 
         // 获取packagemanager的实例
@@ -163,6 +178,7 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
         String version = packInfo.versionName;
         return version;
     }
+
     /**
      * 将图片存到本地
      */

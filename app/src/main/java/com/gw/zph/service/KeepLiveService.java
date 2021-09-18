@@ -75,7 +75,7 @@ public class KeepLiveService extends Service {
         }
         //绑定本地服务
         KeepLiveService.this.bindService(new Intent(KeepLiveService.this, LocationService.class), conn, Context.BIND_IMPORTANT);
-        Intent intent1 = new Intent("com.gw.zph.KeepLiveService");
+        Intent intent1 = new Intent("com.gw.zph.service.KeepLiveService");
         sendBroadcast(intent1);
         super.onDestroy();
     }

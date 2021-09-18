@@ -18,6 +18,7 @@ import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMapUtils;
 import com.amap.api.maps.model.LatLng;
 import com.gw.safty.common.network.BaseResponse;
+import com.gw.safty.common.network.CommonResponse;
 import com.gw.safty.common.utils.JSDateUtil;
 import com.gw.safty.common.utils.NetUtil;
 import com.gw.zph.application.MyApplication;
@@ -28,6 +29,7 @@ import com.gw.zph.core.StatusHolder;
 import com.gw.zph.core.network.RetrofitClient;
 import com.gw.zph.model.login.bean.UserBean;
 import com.gw.zph.modle.MapService;
+import com.gw.zph.modle.MapService1;
 import com.gw.zph.utils.FileUtil;
 import com.gw.zph.utils.MapUtils;
 import com.gw.zph.utils.ThreadPoolUtil;
@@ -39,6 +41,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Timer;
+import java.util.TimerTask;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,7 +65,7 @@ public class LocationService extends Service {
     private LatLng last_latlng;
     private SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private Date mCurrentMapLocation;
-    private static final int SIZE = 100;
+    private static final int SIZE = 20;
     private static final int ONEMINIUE = 60 * 1_000;
 
     MyBinder binder;
@@ -125,7 +128,7 @@ public class LocationService extends Service {
 //        TimerTask task = new TimerTask() {
 //            @Override
 //            public void run() {
-        initLocation();
+                initLocation();
 //                locationClient.startLocation();
 //            }
 //        };
@@ -158,7 +161,7 @@ public class LocationService extends Service {
             LocationService.this.startService(intent);
         }
         LocationService.this.bindService(new Intent(LocationService.this, KeepLiveService.class), conn, Context.BIND_IMPORTANT);
-        Intent intent1 = new Intent("com.gw.zph.LocationService");
+        Intent intent1 = new Intent("com.gw.zph.service.LocationService");
         sendBroadcast(intent1);
         super.onDestroy();
     }
@@ -204,10 +207,10 @@ public class LocationService extends Service {
         //gps定位优先
         locationOption.setGpsFirst(false);
         //设置定位间隔
-        locationOption.setInterval(30000);
+        locationOption.setInterval(60000);
         locationOption.setNeedAddress(true);//可选，设置是否返回逆地理地址信息。默认是ture
         locationOption.setOnceLocation(false);//可选，设置是否单次定位。默认是false
-        locationOption.setOnceLocationLatest(true);//true表示获取最近3s内精度最高的一次定位结果；false表示使用默认的连续定位策略。
+//        locationOption.setOnceLocationLatest(true);//true表示获取最近3s内精度最高的一次定位结果；false表示使用默认的连续定位策略。
         locationOption.setOnceLocationLatest(false);//可选，设置是否等待wifi刷新，默认为false.如果设置为true,会自动变为单次定位，持续定位时不要使用
         //AMapLocationClientOption.setLocationProtocol(AMapLocationProtocol.HTTP);//可选， 设置网络请求的协议。可选HTTP或者HTTPS。默认为HTTP
     }
@@ -232,7 +235,7 @@ public class LocationService extends Service {
                 mCurrentMapLocation = new Date();
             }
             final LatLng newlatlng = new LatLng(loc.getLatitude(), loc.getLongitude());
-            Log.i("TAGG", "位置：" + JSDateUtil.getDataStringByObj(loc.getAddress()));
+            Log.i("TAGG", "ZG位置：" + JSDateUtil.getDataStringByObj(loc.getAddress()));
 
             MyApplication myApplication = (MyApplication) this.getApplication();
             if (myApplication == null) {
@@ -332,20 +335,34 @@ public class LocationService extends Service {
             //分离 以1_000条数据为基础
             if (itemS.size() <= SIZE) {
                 //直接上传
-                MapService service = RetrofitClient.INSTANCE.createService(MapService.class);
-                Call<BaseResponse> call = service.addTrackedList(itemS);
-                call.enqueue(new Callback<BaseResponse>() {
+                MapService1 service = RetrofitClient.INSTANCE.createService(MapService1.class);
+                Call<CommonResponse> call = service.uploadPositionList(itemS);
+                call.enqueue(new Callback<CommonResponse>() {
                     @Override
-                    public void onResponse(@NotNull Call<BaseResponse> call, @NotNull Response<BaseResponse> response) {
-                        //上传成功后删除
+                    public void onResponse(Call<CommonResponse> call, Response<CommonResponse> response) {
+                        if(response.body().getSuccess()){
+                            //上传成功后删除
                         deleteCurrentLatlngList(itemS);
+                        }
                     }
 
                     @Override
-                    public void onFailure(Call<BaseResponse> call, Throwable t) {
+                    public void onFailure(Call<CommonResponse> call, Throwable t) {
 
                     }
                 });
+//                call.enqueue(new Callback<CommonResponse<Object>>() {
+//                    @Override
+//                    public void onResponse(@NotNull Call<CommonResponse<Object>> call, @NotNull Response<CommonResponse<Object>> response) {
+//                        //上传成功后删除
+//                        deleteCurrentLatlngList(itemS);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<CommonResponse<Object>> call, Throwable t) {
+//
+//                    }
+//                });
 
 
             } else {
