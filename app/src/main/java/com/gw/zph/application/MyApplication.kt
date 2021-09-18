@@ -6,13 +6,13 @@ import android.app.Application
 import android.os.Bundle
 import android.widget.Toast
 import com.amap.api.location.AMapLocation
+import com.cmic.sso.sdk.auth.AuthnHelper
 import com.facebook.stetho.Stetho
 import com.getkeepsafe.relinker.ReLinker
 import com.gw.safty.common.UncaughtExceptionCatcher
 import com.gw.zph.BuildConfig
 import com.gw.zph.base.db.DbHelper
 import com.gw.zph.core.network.RetrofitClient
-import com.gw.zph.utils.umeng.PushHelper
 import com.iflytek.cloud.SpeechConstant
 import com.iflytek.cloud.SpeechUtility
 import com.jeremyliao.liveeventbus.LiveEventBus
@@ -36,6 +36,7 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
     private var mFinalCount: Int = 0
     private val activityList = LinkedList<Activity>()
     private var mamapl: AMapLocation? = null
+    private var mAuthnHelper: AuthnHelper? = null
     override fun onCreate() {
         super.onCreate()
         Instance = this
@@ -49,11 +50,15 @@ class MyApplication : ActivityApplication(), Application.ActivityLifecycleCallba
         initUM()
         initEventBus()
         initQMUI()
+        initChinaMoble();
         if (BuildConfig.DEBUG){
             Thread.setDefaultUncaughtExceptionHandler(UncaughtExceptionCatcher())
         }
     }
+    private fun initChinaMoble(){
+        mAuthnHelper=AuthnHelper.getInstance(this)
 
+    }
     private fun initEventBus() {
         ListHandler.configNormal("系统发生错误,请下拉重试", "未找到相应信息", "正在为您查找数据")
         //配置liveEventBus

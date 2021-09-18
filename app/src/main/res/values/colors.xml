@@ -30,6 +30,7 @@
     <!--<color name="background">#f7f7f9</color>-->
     <color name="background">#f9f9f9</color>
     <color name="background_btn">#4785FE</color>
+    <color name="background_btn2">#017CCE</color>
     <color name="background_tran">#c5f7f7f9</color>
     <color name="background_quality">#F0F0F0</color>
     <color name="background_press">#D5D5D5</color>

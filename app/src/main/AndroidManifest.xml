@@ -60,14 +60,15 @@
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.message.MessageEditActivity"></activity>
-        <activity android:name=".ui.message.MessageListActivity" />
-        <activity android:name=".ui.commend.PrivatePolicyActivity" />
-        <activity android:name=".ui.home.map.TrackedActivity" />
-        <activity android:name=".ui.home.list.LetterEditActivity" />
-        <activity android:name=".ui.home.list.MyLetterActivity" />
-        <activity android:name=".ui.home.main.PayActivity" />
-        <activity android:name=".ui.home.main.AddPosActivity" />
+        <activity android:name=".ui.login.RegisterActivity"  android:launchMode="singleTask"></activity>
+        <activity android:name=".ui.message.MessageEditActivity" android:launchMode="singleTask" />
+        <activity android:name=".ui.message.MessageListActivity"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.commend.PrivatePolicyActivity"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.home.map.TrackedActivity"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.home.list.LetterEditActivity"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.home.list.MyLetterActivity"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.home.main.PayActivity"  android:launchMode="singleTask"/>
+        <activity android:name=".ui.home.main.AddPosActivity"  android:launchMode="singleTask"/>
         <activity
             android:name=".ui.home.MainActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"
@@ -113,6 +114,11 @@
             android:name=".ui.login.LoginActivity"
             android:configChanges="screenSize|keyboardHidden|orientation"
             android:launchMode="singleTask" />
+        <activity
+            android:name="com.cmic.sso.sdk.activity.LoginAuthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="unspecified"></activity>
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -156,7 +162,7 @@
                 <action android:name="android.intent.action.ACTION_TIME_TICK" />
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-                <action android:name="com.gw.waterregime.LocationService" />
+                <action android:name="com.gw.zph.LocationService" />
             </intent-filter>
         </service>
         <service
@@ -172,7 +178,7 @@
                 <action android:name="android.intent.action.ACTION_TIME_TICK" />
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-                <action android:name="com.gw.waterregime.KeepLiveService" />
+                <action android:name="com.gw.zph.KeepLiveService" />
             </intent-filter>
         </service>
     </application>

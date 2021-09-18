@@ -131,11 +131,10 @@ public class PermissionActivity extends AppCompatActivity implements PermissionD
 
     @SuppressLint("InlinedApi")
     private static String[] permissions = {
-            Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CALL_PHONE,
-            Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.CAMERA,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CHANGE_NETWORK_STATE,
-            Manifest.permission.READ_PHONE_STATE, Manifest.permission.RECORD_AUDIO,
-            Manifest.permission.FOREGROUND_SERVICE
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_PHONE_STATE,
     };
 
     public static boolean hasPermissions(Context context) {

@@ -29,6 +29,7 @@ import com.amap.api.maps.model.MyLocationStyle;
 import com.gw.safty.common.utils.MyNotificationManagerUtil;
 import com.gw.safty.common.utils.NetUtil;
 import com.gw.safty.common.utils.ServiceUtil;
+import com.gw.safty.common.utils.ToastUtil;
 import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
 import com.gw.zph.application.MyApplication;
@@ -97,7 +98,7 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
     private void setupViewAction() {
         application = (MyApplication) getActivity().getApplication();
         binder = Objects.requireNonNull(getBinder());
-        userBean = StatusHolder.INSTANCE.getLoginUserBean();
+        userBean = StatusHolder.INSTANCE.getCurUserBean(getContext());
     }
 
     private void setupFunction() {
@@ -105,7 +106,11 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
             AddPosActivity.openActivity(getContext());
         });
         binder.btnTrack.setOnClickListener(v -> {
-            TrackedActivity.openActivity(getContext(), "100");
+            if(StatusHolder.INSTANCE.getCurUserBean(getContext())==null){
+                ToastUtil.showToast(getContext(),"请登录！");
+                return;
+            }
+            TrackedActivity.openActivity(getContext(), userBean.getPhone());
         });
         binder.imgLoc.setOnClickListener(v -> {
             if (mLocationClient != null) {
@@ -194,12 +199,13 @@ public class MapFragment extends BaseFragmentImpl<MapFragmentBinding> implements
 
     @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
-//        if (userBean != null) {
+        if (userBean != null) {
             if (!ServiceUtil.isServiceRunning(getContext(), "com.gw.zph.service.service.LocationService")) {
                 getActivity().startService(new Intent(getActivity(), LocationService.class));
                 getActivity().startService(new Intent(getActivity(), KeepLiveService.class));
             }
-//        } else {
+        }
+//        else {
 //            MyNotificationManagerUtil myNotificationManagerUtil = new MyNotificationManagerUtil(getContext());
 //            myNotificationManagerUtil.clearNotification();
 //

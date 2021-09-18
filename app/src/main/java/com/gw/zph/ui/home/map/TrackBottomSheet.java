@@ -40,8 +40,6 @@ public class TrackBottomSheet extends BaseFullBottomSheetFragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.layout_tracked_dialog, container, false);
         binding=DataBindingUtil.bind(view);
-
-
         return view;
     }
 
@@ -53,7 +51,7 @@ public class TrackBottomSheet extends BaseFullBottomSheetFragment {
     }
     private void initLis(){
         binding.layClose.setOnClickListener(v->{
-            getBehavior().setState(BottomSheetBehavior.STATE_COLLAPSED);
+            dismiss();
         });
 
     }

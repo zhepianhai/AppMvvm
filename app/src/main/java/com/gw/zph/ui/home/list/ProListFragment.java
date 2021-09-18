@@ -7,11 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Handler;
 import android.view.View;
 
+import com.gw.safty.common.utils.ToastUtil;
 import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
 import com.gw.zph.base.BaseFragmentImpl;
+import com.gw.zph.core.StatusHolder;
 import com.gw.zph.databinding.ProListFragmentBinding;
 import com.gw.zph.base.db.dao.ProBean;
+import com.gw.zph.ui.message.MessageListActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -59,9 +62,17 @@ public class ProListFragment extends BaseFragmentImpl<ProListFragmentBinding> im
     private void setupViewAction() {
         binder = Objects.requireNonNull(getBinder());
         binder.lay0.setOnClickListener(v->{
+            if(StatusHolder.INSTANCE.getCurUserBean(getContext())==null){
+                ToastUtil.showToast(getContext(),"请登录！");
+                return;
+            }
             LetterEditActivity.openActivity(getContext());
         });
         binder.lay1.setOnClickListener(v->{
+            if(StatusHolder.INSTANCE.getCurUserBean(getContext())==null){
+                ToastUtil.showToast(getContext(),"请登录！");
+                return;
+            }
             MyLetterActivity.openActivity(getContext());
         });
     }

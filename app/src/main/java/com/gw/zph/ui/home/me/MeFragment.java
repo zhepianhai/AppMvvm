@@ -14,6 +14,7 @@ import android.view.View;
 
 import androidx.core.content.FileProvider;
 
+import com.cmic.sso.sdk.activity.LoginAuthActivity;
 import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
 import com.gw.zph.base.BaseFragmentImpl;
@@ -22,6 +23,7 @@ import com.gw.zph.databinding.MeFragmentBinding;
 import com.gw.zph.ui.commend.PrivatePolicyActivity;
 import com.gw.zph.ui.home.main.AddPosActivity;
 import com.gw.zph.ui.login.LoginActivity;
+import com.gw.zph.ui.message.MessageListActivity;
 import com.gw.zph.utils.JSDateUtil;
 import com.gw.zph.view.LoginTipDialog;
 
@@ -63,11 +65,18 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
     @Override
     public void onResume() {
         super.onResume();
-        if(StatusHolder.INSTANCE.getLoginUserBean()==null) {
+        if(StatusHolder.INSTANCE.getCurUserBean(getContext())==null) {
             double r1 = Math.random();
             double r2 = Math.random();
             if (r1 > 0.5 && r2 > 0.5) {
                 showLogin();
+            }
+        }
+        if(binder.btnLogin.getText().equals("登录")){
+            if(StatusHolder.INSTANCE.getCurUserBean(getContext())!=null){
+                binder.btnLogin.setText("+添加想定位的人");
+                binder.btnLout.setVisibility(View.VISIBLE);
+                binder.tvNPhone.setText(JSDateUtil.phoneNumber(StatusHolder.INSTANCE.getCurUserBean(getContext()).getPhone()));
             }
         }
     }
@@ -81,12 +90,14 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
     }
 
     private void setupFunction() {
-        if (StatusHolder.INSTANCE.getLoginUserBean() == null) {
+        if (StatusHolder.INSTANCE.getCurUserBean(getContext()) == null) {
             binder.btnLogin.setText("登录");
             binder.tvNPhone.setText("");
+            binder.btnLout.setVisibility(View.GONE);
         } else {
+            binder.btnLout.setVisibility(View.VISIBLE);
             binder.btnLogin.setText("+添加想定位的人");
-            binder.tvNPhone.setText("131****5893");
+            binder.tvNPhone.setText(JSDateUtil.phoneNumber(StatusHolder.INSTANCE.getCurUserBean(getContext()).getPhone()));
         }
 
 
@@ -97,7 +108,7 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
             e.printStackTrace();
         }
         binder.btnLogin.setOnClickListener(v -> {
-            if (StatusHolder.INSTANCE.getLoginUserBean() == null) {
+            if (StatusHolder.INSTANCE.getCurUserBean(getContext()) == null) {
                 LoginActivity.openActivity(getContext());
             } else {
                 AddPosActivity.openActivity(getContext());
@@ -109,6 +120,7 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
         });
         binder.layKefu.setOnClickListener(v -> {
             //客服
+            MessageListActivity.openActivity(getContext());
         });
         binder.layYHXY.setOnClickListener(v -> {
             //用户协议
@@ -117,6 +129,11 @@ public class MeFragment extends BaseFragmentImpl<MeFragmentBinding> {
         binder.layYS.setOnClickListener(v -> {
             //隐私
             PrivatePolicyActivity.openActivity(getContext(),PrivatePolicyActivity.TYPE_1);
+        });
+        binder.btnLout.setOnClickListener(v->{
+            //退出
+            StatusHolder.INSTANCE.reset(getContext());
+            System.exit(0);
         });
     }
     private void showLogin(){

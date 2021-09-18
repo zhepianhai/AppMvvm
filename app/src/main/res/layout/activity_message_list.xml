@@ -71,10 +71,24 @@
             android:paddingLeft="8dp"
             android:layout_height="@dimen/x48"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerMsg"
+        <FrameLayout
+            android:background="@color/background"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerMsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <include
+                android:visibility="gone"
+                android:id="@+id/layEmpty"
+                layout="@layout/layout_empty_view"/>
+        </FrameLayout>
+
+
 
     </LinearLayout>
 </layout>

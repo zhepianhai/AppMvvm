@@ -91,4 +91,9 @@ public class JSDateUtil {
         }
         return true;
     }
+    public static String phoneNumber(String msg){
+        msg=getDataStringByObj(msg);
+        if(msg==null||msg.length()==0) return "";
+        return msg.replaceAll("(\\d{3})\\d{4}(\\d{4})","$1****$2");
+    }
 }

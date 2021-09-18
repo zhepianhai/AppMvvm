@@ -38,17 +38,17 @@ open class BaseActivityImpl : BaseActivity() {
         QMUIStatusBarHelper.translucent(this)
         QMUIStatusBarHelper.setStatusBarLightMode(this)
         Timber.e("${this::class.java.simpleName} onCreate")
-        if (!StatusHolder.statusInit) {
-            val token = getSavedUserToken()
-            if (token == null) {
-                reLogin()
-            } else {
-                StatusHolder.setLoginUserBean(token)
-                getSavedOrg()?.let { StatusHolder.setOrgBean(it) }
-                StatusHolder.setMode(getSavedAppMode())
-                StatusHolder.statusInit = true
-            }
-        }
+//        if (!StatusHolder.statusInit) {
+//            val token = getSavedUserToken()
+//            if (token == null) {
+//                reLogin()
+//            } else {
+//                StatusHolder.setLoginUserBean(token)
+//                getSavedOrg()?.let { StatusHolder.setOrgBean(it) }
+//                StatusHolder.setMode(getSavedAppMode())
+//                StatusHolder.statusInit = true
+//            }
+//        }
         Device.setup(this)
         FilePath.setup(this)
         supportFragmentManager.registerFragmentLifecycleCallbacks(FragmentLifecycleCallback(), true)
@@ -111,13 +111,7 @@ open class BaseActivityImpl : BaseActivity() {
         return decodeInt
     }
 
-    protected fun getSavedOrg(): UserBean.AllOrgBean? {
-//        val orgJson = getSharedPreferences(KEY_CACHE_FILE, Context.MODE_PRIVATE)
-//            .getString(KEY_SELECT_ORG, "") ?: ""
-        val orgJson = MMKV.defaultMMKV().decodeString(KEY_SELECT_ORG, "") ?: ""
-        if (orgJson.isEmpty()) return null
-        return orgJson.jsonToType(UserBean.AllOrgBean::class.java)
-    }
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

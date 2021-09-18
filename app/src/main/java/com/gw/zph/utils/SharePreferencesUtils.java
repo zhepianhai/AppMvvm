@@ -81,10 +81,17 @@ public class SharePreferencesUtils {
     /**
      * 设置sp参数 string 类型的
      * @param key
-     * @param defaultStr
+     * @param
      */
-    public static void setStringParam(String key, String defaultStr) {
-        MMKV.mmkvWithID(FILE_NAME, Context.MODE_PRIVATE).putString(key, defaultStr);
+//    public static void setStringParam(String key, String defaultStr) {
+//        MMKV.mmkvWithID(FILE_NAME, Context.MODE_PRIVATE).putString(key, defaultStr);
+//    }
+
+    public static void setStringParam(Context context, String key, String defaultStr) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.putString(key, defaultStr);
+        edit.apply();
     }
 
 //    /**
@@ -95,11 +102,11 @@ public class SharePreferencesUtils {
 //     * @param defaultBoolean
 //     * @return
 //     */
-//    public static String getStringParam(Context context, String key, String defaultBoolean) {
-//        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
-//        String result = sp.getString(key, Constants.BLANK);
-//        return result;
-//    }
+    public static String getStringParam(Context context, String key, String defaultBoolean) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        String result = sp.getString(key, "");
+        return result;
+    }
 //
 //    /**
 //     * 设置sp参数 string 类型的
@@ -174,9 +181,9 @@ public class SharePreferencesUtils {
 //     *
 //     * @param context
 //     */
-//    public static void setTokenData(Context context, String value) {
-//        setStringParam(context, TOKEN_DATA, value);
-//    }
+    public static void setTokenData(Context context, String value) {
+        setStringParam(context, TOKEN_DATA, value);
+    }
 
 //    /**
 //     * 获取补丁参数值
@@ -184,10 +191,10 @@ public class SharePreferencesUtils {
 //     * @param context
 //     * @return
 //     */
-//    public static String getTokenData(Context context) {
-//        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
-//        return sp.getString(TOKEN_DATA, Constants.BLANK);
-//    }
+    public static String getTokenData(Context context) {
+        SharedPreferences sp = context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
+        return sp.getString(TOKEN_DATA, "");
+    }
 //
 //
 //    /**
@@ -332,8 +339,9 @@ public class SharePreferencesUtils {
      *
      * @return
      */
-    public static void clearAreaByAddCode() {
-        setStringParam(ADD_CODE, "");
+    public static void clearAreaByAddCode(Context context) {
+//        setStringParam(ADD_CODE, "");
+        setStringParam(context, TOKEN_DATA, "");
     }
 //
 //    /**

@@ -2,8 +2,6 @@ package com.gw.zph.core.network
 
 import com.gw.zph.BuildConfig
 import com.gw.zph.core.*
-import com.gw.zph.core.StatusHolder.loginUserBean
-import com.gw.zph.core.StatusHolder.orgBean
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -12,10 +10,6 @@ import java.io.IOException
 class CacheInterceptor : Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
-        val token: String = loginUserBean?.accessToken ?: ""
-        val persId: String = loginUserBean?.guid ?: ""
-        val orgId: String = orgBean?.orgId ?: ""
-        val accessToken: String = loginUserBean?.accessToken ?: ""
 
         val newRequest = chain.request()
             .newBuilder()
@@ -23,10 +17,6 @@ class CacheInterceptor : Interceptor {
             .addHeader("client", API_CLIENT)
             .addHeader("source", "${Device.brand},${Device.model}")
             .addHeader("uid", Device.imei)
-            .addHeader("token", token)
-            .addHeader("persId", persId)
-            .addHeader("accessToken", accessToken)
-            .addHeader("orgId", orgId)
             .build()
 
         //通过给定的键url_name,从request中获取headers

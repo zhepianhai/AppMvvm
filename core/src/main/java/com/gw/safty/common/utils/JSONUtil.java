@@ -1,5 +1,13 @@
 package com.gw.safty.common.utils;
 
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonSyntaxException;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -235,5 +243,28 @@ public class JSONUtil {
         } catch (JSONException e) {
         }
         return null;
+    }
+    public static <T> T jsonToObj(String json, Class<T> tClass) {
+        T item = null;
+        try {
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss")
+                    .enableComplexMapKeySerialization().create();
+            item = gson.fromJson(json, tClass);
+
+        } catch (JsonSyntaxException e2) {
+        } catch (JsonParseException e1) {
+        }
+        return item;
+    }
+    public static <T> String objToJson(T t) {
+        String objectGson = null;
+        try {
+            Gson gson = new GsonBuilder()
+                    .enableComplexMapKeySerialization().create();
+            objectGson = gson.toJson(t);
+        } catch (JsonIOException e1) {
+        }
+
+        return objectGson;
     }
 }

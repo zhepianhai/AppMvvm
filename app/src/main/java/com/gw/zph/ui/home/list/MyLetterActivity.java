@@ -16,6 +16,7 @@ import com.gw.zph.base.db.dao.OffLineLatLngInfo;
 import com.gw.zph.base.db.dao.OffLineLatLngInfoDao;
 import com.gw.zph.base.db.dao.ProBean;
 import com.gw.zph.base.db.dao.ProBeanDao;
+import com.gw.zph.core.StatusHolder;
 import com.gw.zph.databinding.LetterEditActivityBinding;
 import com.gw.zph.databinding.MyLetterActivityBinding;
 
@@ -53,7 +54,7 @@ public class MyLetterActivity extends BaseActivityImpl implements AdpProList.Pro
     };
     private void setupViewAction(){
         List<ProBean> item = DbHelper.getInstance().getProBeanDaoLongDBManager().queryBuilder()
-                .where(ProBeanDao.Properties.PersId.eq("100"))
+                .where(ProBeanDao.Properties.PersId.eq(StatusHolder.INSTANCE.getCurUserBean(this).getPhone()))
                 .list();
 
         if(item==null||item.size()==0){

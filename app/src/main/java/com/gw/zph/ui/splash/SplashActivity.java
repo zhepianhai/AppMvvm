@@ -73,13 +73,13 @@ public class SplashActivity extends BaseActivityImpl {
 
     private void setupViewModel() {
         setupBaseViewModel(viewModel);
-        viewModel.getVersionInfo().observe(this, version -> {
-            if (null == version) {
-                defaultLoadMain();
-            } else {
-                showUpdateDialog(version);
-            }
-        });
+//        viewModel.getVersionInfo().observe(this, version -> {
+//            if (null == version) {
+//                defaultLoadMain();
+//            } else {
+//                showUpdateDialog(version);
+//            }
+//        });
     }
 
     private void getIntentExtra() {
@@ -134,7 +134,7 @@ public class SplashActivity extends BaseActivityImpl {
                     if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                         if (downLoadTag == 1) {
                             DownloadDialog downloadDialog = new DownloadDialog(SplashActivity.this, R.style.Theme_AppCompat_Dialog_Alert);
-                            downloadDialog.startDownload(BuildConfig.BASE_URL + "pdcApi/version/download");
+                            downloadDialog.startDownload(BuildConfig.BASE_URL + "bis/version/download");
                         }
                     } else {
                         ActivityExtensionsKt.exShortToast(SplashActivity.this, "拒绝相关权限将无法更新软件");
@@ -170,12 +170,13 @@ public class SplashActivity extends BaseActivityImpl {
      * 默认进入主页面,或者跳转登录界面获取授权信息
      */
     private void defaultLoadMain() {
-        if (StatusHolder.INSTANCE.getLoginUserBean() == null) {
+//        if (StatusHolder.INSTANCE.getUserBean() == null) {
             Intent intent = new Intent(this,  MainActivity.class);
             startActivityForResult(intent, REQ_LOGIN);
-        } else {
             finish();
-        }
+//        } else {
+//            finish();
+//        }
     }
 
     @Override

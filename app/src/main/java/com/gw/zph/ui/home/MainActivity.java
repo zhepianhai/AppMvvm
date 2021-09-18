@@ -118,6 +118,7 @@ public class MainActivity extends BaseActivityImpl implements TabChangeListener 
                         // TODO Auto-generated method stub
                         finish();
                         arg0.dismiss();
+                        System.exit(0);
                     });
                     builder.setNegativeButton("取消", (dialogInterface, i) -> dialogInterface.dismiss());
                     builder.create().show();

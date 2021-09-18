@@ -24,7 +24,6 @@ class LoginRepository : BaseRepository() {
             val response = service.loginByCode(phone, code)
             val checkResponse = checkResponse(response)
             if (checkResponse is NetResult.Success) {
-                checkResponse.data.accessToken = response.accessToken
             }
             checkResponse
         }

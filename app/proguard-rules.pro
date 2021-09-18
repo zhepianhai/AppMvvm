@@ -29,6 +29,9 @@
 
 -keepattributes EnclosingMethod
 #tkrefreshlayout
+#中移动
+-dontwarn com.cmic.sso.sdk.**
+-keep class com.cmic.sso.sdk.**{*;}
 
 -keep class com.lcodecore.tkrefreshlayout.** { *; }
 -dontwarn com.lcodecore.tkrefreshlayout.**
@@ -36,11 +39,11 @@
 #-------------------------------------------Base混淆规则----------------------------------------------
 #---------------------------------1.实体类---------------------------------
 
--keep class com.gw.slbdc.model.** { *; }
+-keep class com.gw.zph.model.** { *; }
 
--keep class com.gw.slbdc.base.** { *; }
+-keep class com.gw.zph.base.** { *; }
 #工具类不混淆
--keep class com.gw.slbdc.util.** { *; }
+-keep class com.gw.zph.util.** { *; }
 
 
 #图片旋转框架
@@ -78,7 +81,7 @@ public static java.lang.String TABLENAME;
 -keepclassmembers class * {
   	public <init>(org.json.JSONObject);
 }
--keep public class com.gw.slbdc.R$*{
+-keep public class com.gw.zph.R$*{
 	public static final int *;
 }
 -keep class com.umeng.commonsdk.**{*;}
@@ -274,7 +277,7 @@ public static java.lang.String TABLENAME;
 
 #---------------------------------5.自定义控件------------------------------
 
--keep class com.gw.safty.** { *; }
+-keep class com.gw.zph.view.** { *; }
 
 
 #----------------------------------------------------------------------------
@@ -435,11 +438,11 @@ public static java.lang.String TABLENAME;
 #防止inline
 -dontoptimize
 
--keepclassmembers class com.gw.slbdc.application.MyApplication {
+-keepclassmembers class com.gw.zph.application.MyApplication {
     public <init>();
 }
 # 如果不使用android.support.annotation.Keep则需加上此行
--keep class com.gw.slbdc.application.SophixStubApplication$RealApplicationStub
+-keep class com.gw.zph.application.SophixStubApplication$RealApplicationStub
 
 #----------------------------------------------------------------------------
 #XPopup

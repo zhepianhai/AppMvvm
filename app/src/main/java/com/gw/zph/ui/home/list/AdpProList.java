@@ -53,7 +53,7 @@ public class AdpProList extends RecyclerView.Adapter<AdpProList.RecycleViewHolde
         ProBean item=mListData.get(position);
         try {
             holder.tv1.setText(JSDateUtil.getDataStringByObj(item.getContent()));
-            holder.tv2.setText(JSDateUtil.getDataStringByObj(item.getPer()));
+            holder.tv2.setText(JSDateUtil.phoneNumber(item.getPer()));
             holder.tv3.setText(JSDateUtil.getDataStringByObj(item.getTime()));
             holder.itemView.setOnClickListener(view -> OnItemClickListener.onVillProjectClickListener( item));
             if(TextUtils.isEmpty(item.getState())){

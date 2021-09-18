@@ -38,6 +38,7 @@ object Constants {
     const val MAP_SCALE_CHINA = 3.6f //
 
     const val MAP_SCALE_PRJINFO = 16.8f //12f 14f
-
+    const val CHINA_MOB_APPID="300012076113"
+    const val CHINA_MOB_APPKEY=" 16A6B7FB107836AA62083270BD8953C7"
 
 }

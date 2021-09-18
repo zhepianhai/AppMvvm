@@ -1,20 +1,15 @@
 package com.gw.zph.service;
 
-import android.app.Notification;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.Color;
 import android.os.Binder;
 import android.os.Build;
 import android.os.IBinder;
-import android.os.RemoteException;
 import android.text.format.Time;
 import android.util.Log;
-import android.widget.RemoteViews;
-import android.widget.TextView;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -24,9 +19,7 @@ import com.amap.api.maps.AMapUtils;
 import com.amap.api.maps.model.LatLng;
 import com.gw.safty.common.network.BaseResponse;
 import com.gw.safty.common.utils.JSDateUtil;
-import com.gw.safty.common.utils.MyNotificationManagerUtil;
 import com.gw.safty.common.utils.NetUtil;
-import com.gw.zph.R;
 import com.gw.zph.application.MyApplication;
 import com.gw.zph.base.db.DbHelper;
 import com.gw.zph.base.db.dao.OffLineLatLngInfo;
@@ -34,7 +27,6 @@ import com.gw.zph.base.db.dao.OffLineLatLngInfoDao;
 import com.gw.zph.core.StatusHolder;
 import com.gw.zph.core.network.RetrofitClient;
 import com.gw.zph.model.login.bean.UserBean;
-import com.gw.zph.modle.AllSerivice;
 import com.gw.zph.modle.MapService;
 import com.gw.zph.utils.FileUtil;
 import com.gw.zph.utils.MapUtils;
@@ -44,15 +36,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Timer;
-import java.util.TimerTask;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -252,7 +238,7 @@ public class LocationService extends Service {
             if (myApplication == null) {
                 return;
             }
-            if (StatusHolder.INSTANCE.getLoginUserBean() == null) {
+            if (StatusHolder.INSTANCE.getCurUserBean(getApplicationContext()) == null) {
                 return;
             }
             if (null != loc && myApplication.getMamapl() != null) {
@@ -261,7 +247,7 @@ public class LocationService extends Service {
             }
 
             //
-            String mPersId = StatusHolder.INSTANCE.getLoginUserBean().getGuid();
+            String mPersId = StatusHolder.INSTANCE.getCurUserBean(getApplicationContext()).getPhone();
             List<OffLineLatLngInfo> item = DbHelper.getInstance().offLineLatLngInfoLocDBManager().queryBuilder()
                     .where(OffLineLatLngInfoDao.Properties.PersId.eq(mPersId))
                     .list();
@@ -314,18 +300,18 @@ public class LocationService extends Service {
                         adCode = myApplication.getMamapl().getAdCode();
                         adCode = MapUtils.getCityCode(adCode);
                     }
-                    UserBean userBean = StatusHolder.INSTANCE.getLoginUserBean();
+                    UserBean userBean = StatusHolder.INSTANCE.getCurUserBean(getApplicationContext());
                     if (userBean == null) {
                         return;
                     }
                     OffLineLatLngInfo info = new OffLineLatLngInfo();
                     info.setAdCode(adCode);
-                    info.setPersId(userBean.getGuid());
-                    info.setPersName(userBean.getPersName() + "");
+                    info.setPersId(userBean.getPersid());
+                    info.setPersName(userBean.getPersid() + "");
                     info.setLat(loc.getLatitude());
                     info.setLon(loc.getLongitude());
                     info.setOperateTime(sdf1.format(new Date().getTime()));
-                    info.setMobile(userBean.getMobilenumb() + "");
+                    info.setMobile(userBean.getPhone() + "");
                     info.setAddress(JSDateUtil.getDataStringByObj(loc.getAddress()));
                     info.setSpeed(loc.getSpeed());
                     DbHelper.getInstance().offLineLatLngInfoLocDBManager().insert(info);
@@ -347,7 +333,7 @@ public class LocationService extends Service {
             if (itemS.size() <= SIZE) {
                 //直接上传
                 MapService service = RetrofitClient.INSTANCE.createService(MapService.class);
-                Call<BaseResponse> call = service.uploadPositionList(itemS);
+                Call<BaseResponse> call = service.addTrackedList(itemS);
                 call.enqueue(new Callback<BaseResponse>() {
                     @Override
                     public void onResponse(@NotNull Call<BaseResponse> call, @NotNull Response<BaseResponse> response) {

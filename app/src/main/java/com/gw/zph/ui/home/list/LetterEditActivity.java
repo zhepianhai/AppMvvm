@@ -13,6 +13,7 @@ import com.gw.zph.R;
 import com.gw.zph.base.BaseActivityImpl;
 import com.gw.zph.base.db.DbHelper;
 import com.gw.zph.base.db.dao.ProBean;
+import com.gw.zph.core.StatusHolder;
 import com.gw.zph.databinding.LetterEditActivityBinding;
 import com.gw.zph.ui.login.LoginActivity;
 import com.gw.zph.ui.login.LoginViewModel;
@@ -58,10 +59,10 @@ public class LetterEditActivity extends BaseActivityImpl {
         }
         ProBean proBean=new ProBean();
         proBean.setContent(binding.etContent.getText().toString().trim());
-        proBean.setPer("131XXXX8888");
+        proBean.setPer(StatusHolder.INSTANCE.getCurUserBean(this).getPhone());
         proBean.setState("1");
         proBean.setTime(sdf1.format(new Date()));
-        proBean.setPersId("100");
+        proBean.setPersId(StatusHolder.INSTANCE.getCurUserBean(this).getPhone());
         boolean insert = DbHelper.getInstance().getProBeanDaoLongDBManager().insert(proBean);
         QMUITipDialog dialog = new QMUITipDialog.Builder(this).
                 setIconType(QMUITipDialog.Builder.ICON_TYPE_LOADING)

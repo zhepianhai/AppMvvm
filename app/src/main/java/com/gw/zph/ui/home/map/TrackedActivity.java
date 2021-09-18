@@ -43,6 +43,7 @@ import com.gw.zph.base.db.dao.OffLineLatLngInfo;
 import com.gw.zph.base.db.dao.OffLineLatLngInfoDao;
 import com.gw.zph.core.StatusHolder;
 import com.gw.zph.databinding.TrackedActivityBinding;
+import com.gw.zph.modle.AllVm;
 import com.gw.zph.ui.home.list.MyLetterActivity;
 import com.gw.zph.utils.CommonUtils;
 import com.gw.zph.utils.Constants;
@@ -74,6 +75,7 @@ public class TrackedActivity extends BaseActivityImpl implements AMapLocationLis
     private float distance;
     private SmoothMoveMarker smoothMarker;
     private boolean mFlagMove;
+    private AllVm viewModel;
     public static void openActivity(Context context,String persId) {
         Intent intent = new Intent();
         intent.setClass(context, TrackedActivity.class);
@@ -85,6 +87,8 @@ public class TrackedActivity extends BaseActivityImpl implements AMapLocationLis
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_tracked );
         binding.getRoot().setFitsSystemWindows(true);
+        viewModel = createViewModel(AllVm.class);
+        setupBaseViewModel(viewModel);
         initObserver();
         setupViewAction();
         checkMap(savedInstanceState);
@@ -111,27 +115,39 @@ public class TrackedActivity extends BaseActivityImpl implements AMapLocationLis
     };
 
     private void setupViewAction(){
-        List<OffLineLatLngInfo> item = DbHelper.getInstance().offLineLatLngInfoLocDBManager().queryBuilder()
-                .where(OffLineLatLngInfoDao.Properties.PersId.eq("100"))
-                .list();
-        if(item!=null){
-            list.addAll(item);
-        }
+        viewModel.getTrackListModel().observe(this,items->{
+            list.clear();
+            list.addAll(items);
+            show();
+        });
+
+
 
     };
     private void showTracked(){
-        if(list.size()==0) return;
         mListLatlng=new ArrayList<>();
         mListLatlng.clear();
-        for(OffLineLatLngInfo item: list){
-            LatLng latLng=new LatLng(JSDateUtil.getDatadoubleByObj(item.getLat()),JSDateUtil.getDatadoubleByObj(item.getLon()));
-            mListLatlng.add(latLng);
-        }
-        MapUtils.addTracker(mAMap,mListLatlng,this);
+        if(StatusHolder.INSTANCE.getUserBean()==null) {
+            List<OffLineLatLngInfo> items = DbHelper.getInstance().offLineLatLngInfoLocDBManager().queryBuilder()
+                    .where(OffLineLatLngInfoDao.Properties.Mobile.eq(persId))
+                    .list();
+            if(items!=null){
+                list.addAll(items);
+            }
+            show();
 
+        }else{
+            viewModel.getTrackedByPhoneList(persId);
+        }
 
     }
-
+    private void show(){
+        for (OffLineLatLngInfo item : list) {
+            LatLng latLng = new LatLng(JSDateUtil.getDatadoubleByObj(item.getLat()), JSDateUtil.getDatadoubleByObj(item.getLon()));
+            mListLatlng.add(latLng);
+        }
+        MapUtils.addTracker(mAMap, mListLatlng, this);
+    }
     private void smoothMarker(){
         if(mListLatlng==null) return;
         if(smoothMarker==null){
@@ -229,7 +245,6 @@ public class TrackedActivity extends BaseActivityImpl implements AMapLocationLis
         uiSettings.setLogoBottomMargin(-38);//隐藏logo
         uiSettings.setScaleControlsEnabled(false);//控制比例尺控件是否显示
         setUpLocation();
-        showTracked();
     }
     private void setUpLocation(){
         //初始化定位
@@ -251,6 +266,7 @@ public class TrackedActivity extends BaseActivityImpl implements AMapLocationLis
         //设置场景模式后最好调用一次stop，再调用start以保证场景模式生效
         mLocationClient.stopLocation();
         mLocationClient.startLocation();
+        showTracked();
     }
 
     @Override

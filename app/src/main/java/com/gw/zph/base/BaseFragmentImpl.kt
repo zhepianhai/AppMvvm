@@ -44,7 +44,7 @@ abstract class BaseFragmentImpl<DB: ViewDataBinding>: BaseFragment<DB>() {
 
     open fun logout(){
         BaseActivityImpl.clearCache(requireActivity())
-        StatusHolder.reset()
+        StatusHolder.reset(context!!)
         val intent = Intent(requireActivity(), SplashActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivityForResult(intent, REQ_LOGIN)

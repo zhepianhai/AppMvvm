@@ -9,12 +9,14 @@ import android.view.View;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.gw.safty.common.utils.ToastUtil;
 import com.gw.slbdc.ui.main.mine.HomeFragmentViewModel;
 import com.gw.zph.R;
 import com.gw.zph.base.BaseFragmentImpl;
 import com.gw.zph.base.db.DbHelper;
 import com.gw.zph.base.db.dao.OffLineLatLngInfo;
 import com.gw.zph.base.db.dao.OffLineLatLngInfoDao;
+import com.gw.zph.core.StatusHolder;
 import com.gw.zph.databinding.HomeFragmentBinding;
 import com.gw.zph.ui.home.map.TrackedActivity;
 
@@ -64,7 +66,11 @@ public class HomeFragment extends BaseFragmentImpl<HomeFragmentBinding> {
             AddPosActivity.openActivity(getContext());
         });
         binder.btnTrack.setOnClickListener(v->{
-            TrackedActivity.openActivity(getContext(),"100");
+            if(StatusHolder.INSTANCE.getCurUserBean(getContext())==null){
+                ToastUtil.showToast(getContext(),"请登录！");
+                return;
+            }
+            TrackedActivity.openActivity(getContext(),StatusHolder.INSTANCE.getCurUserBean(getContext()).getPhone());
         });
     }
 

@@ -66,7 +66,7 @@ android {
             buildConfigField "boolean", "DEBUG_MODE", "true"
             buildConfigField "boolean", "appendApi", "false"
             buildConfigField 'String', 'FLAVORS', '\"\"'
-            buildConfigField "String", "BASE_URL", "\"http://10.1.102.136:8100/\""
+            buildConfigField "String", "BASE_URL", "\"http://154.211.5.90:8080/\""
         }
         Prod {
             dimension "release"
@@ -75,7 +75,7 @@ android {
             buildConfigField "boolean", "DEBUG_MODE", "false"
             buildConfigField "boolean", "appendPdc", "false"
             buildConfigField 'String', 'FLAVORS', '\"\"'
-            buildConfigField "String", "BASE_URL", "\"http://10.1.102.136:8100/\""
+            buildConfigField "String", "BASE_URL", "\"http://154.211.5.90:8080/\""
         }
     }
     dataBinding {
@@ -147,6 +147,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.2.1'
+    implementation files('libs\\quick_login_android_5.8.1.jar')
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
