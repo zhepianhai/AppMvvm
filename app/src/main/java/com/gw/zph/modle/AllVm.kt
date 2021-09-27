@@ -7,6 +7,7 @@ import com.gw.safty.common.extensions.nMessage
 import com.gw.zph.base.db.dao.OffLineLatLngInfo
 import com.gw.zph.model.login.bean.UserBean
 import com.gw.zph.modle.bean.MsgBean
+import com.gw.zph.modle.bean.VipBean
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -107,6 +108,34 @@ class AllVm : BaseViewModel() {
                 repository.addMsg(msg)
             }.success {
                 _addMsg.value=it
+            }.failure {
+                showError(nMessage)
+            }
+        }
+    }
+
+    //VIP
+    private val _addVip = MutableLiveData<VipBean>()
+    val addVipModel: LiveData<VipBean> = _addVip
+    fun addVip(msg:VipBean){
+        launch {
+            withContext(Dispatchers.IO){
+                repository.addOrUpVip(msg)
+            }.success {
+                _addVip.value=it
+            }.failure {
+                showError(nMessage)
+            }
+        }
+    }
+    private val _getvip = MutableLiveData<VipBean>()
+    val getvipModel: LiveData<VipBean> = _getvip
+    fun getVipByPhone(id:String){
+        launch {
+            withContext(Dispatchers.IO){
+                repository.getVipByPhone(id)
+            }.success {
+                _getvip.value=it
             }.failure {
                 showError(nMessage)
             }

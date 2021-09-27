@@ -7,6 +7,7 @@ import com.gw.zph.core.URL_NAME
 import com.gw.zph.core.URL_NAME_EMERGENCY
 import com.gw.zph.model.login.bean.UserBean
 import com.gw.zph.modle.bean.MsgBean
+import com.gw.zph.modle.bean.VipBean
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
@@ -60,4 +61,19 @@ interface AllSerivice {
     suspend fun addMsg(
         @Body bean: MsgBean
     ): CommonResponse<MsgBean>
+
+    //VIP的
+    @Headers("$URL_NAME:$URL_NAME_EMERGENCY")
+    @POST("bis/vip/addOrUp")
+    suspend fun addOrUpVip(
+        @Body bean: VipBean
+    ): CommonResponse<VipBean>
+
+    //根据手机号查询
+    @Headers("$URL_NAME:$URL_NAME_EMERGENCY")
+    @POST("bis/vip/getBy/{phone}")
+    suspend fun getVipByPhone(
+        @Path("phone") id: String): CommonResponse<VipBean>
+
+
 }

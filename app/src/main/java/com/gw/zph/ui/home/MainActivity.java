@@ -24,6 +24,7 @@ import com.gw.slbdc.ui.main.MainActivityViewModel;
 import com.gw.zph.R;
 import com.gw.zph.base.BaseActivityImpl;
 import com.gw.zph.databinding.MainActBinding;
+import com.gw.zph.modle.AllVm;
 import com.gw.zph.ui.home.list.ProListFragment;
 import com.gw.zph.ui.home.main.HomeFragment;
 import com.gw.zph.ui.home.map.MapFragment;
@@ -37,7 +38,7 @@ import static android.view.KeyEvent.KEYCODE_BACK;
 public class MainActivity extends BaseActivityImpl implements TabChangeListener {
     private MainActBinding binding;
     private MainFrameTabManager mTabManager;
-    private MainActivityViewModel viewModel;
+    private AllVm viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class MainActivity extends BaseActivityImpl implements TabChangeListener 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setLifecycleOwner(this);
         binding.getRoot().setFitsSystemWindows(true);
-        viewModel = createViewModel(MainActivityViewModel.class);
+        viewModel = createViewModel(AllVm.class);
         init();
         //默认选中首页
         mTabManager.onTabChanged("首页");

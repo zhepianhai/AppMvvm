@@ -40,6 +40,11 @@
 #---------------------------------1.实体类---------------------------------
 
 -keep class com.gw.zph.model.** { *; }
+-keep class com.gw.zph.base.** { *; }
+-keep class com.gw.zph.service.** { *; }
+-keep class com.gw.zph.core.** { *; }
+-keep class com.gw.zph.modle.** { *; }
+-keep class com.gw.zph.ui.** { *; }
 
 -keep class com.gw.zph.base.** { *; }
 #工具类不混淆

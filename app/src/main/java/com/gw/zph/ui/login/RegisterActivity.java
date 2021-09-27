@@ -73,6 +73,10 @@ public class RegisterActivity extends BaseActivityImpl {
             ToastUtil.showToast(this,"请再次输入密码！");
             return;
         }
+        if(psd1.length()<6){
+            ToastUtil.showToast(this,"密码长度至少6位！");
+            return;
+        }
         if(!psd2.equals(psd1)){
             ToastUtil.showToast(this,"两次密码不一致！");
             return;

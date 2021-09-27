@@ -5,6 +5,7 @@ import com.gw.zph.base.BaseRepository
 import com.gw.zph.base.db.dao.OffLineLatLngInfo
 import com.gw.zph.model.login.bean.UserBean
 import com.gw.zph.modle.bean.MsgBean
+import com.gw.zph.modle.bean.VipBean
 
 class AllRepository  : BaseRepository() {
     private val service by lazy { getServer<AllSerivice>() }
@@ -32,5 +33,12 @@ class AllRepository  : BaseRepository() {
     }
     suspend fun addMsg(user:MsgBean): NetResult<MsgBean> {
         return safeApiCall { checkResponse(service.addMsg(user)) }
+    }
+
+    suspend fun addOrUpVip(user:VipBean): NetResult<VipBean> {
+        return safeApiCall { checkResponse(service.addOrUpVip(user)) }
+    }
+    suspend fun getVipByPhone(persId:String): NetResult<VipBean> {
+        return safeApiCall { checkResponse(service.getVipByPhone(persId)) }
     }
 }
